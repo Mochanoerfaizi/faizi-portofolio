@@ -1,0 +1,2598 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Mochamad Noer Faizi Supriatna Putra — QA Engineer berpengalaman di Telkom Indonesia. Spesialis manual & automation testing.">
+  <title>Faizi — QA Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root {
+      --navy: #0f2545;
+      --navy-mid: #1e3a5f;
+      --navy-light: #2a4d7f;
+      --cyan: #00b4d8;
+      --cyan-light: #90e0ef;
+      --cyan-dim: #023e8a;
+      --white: #ffffff;
+      --off-white: #f0f6ff;
+      --gray-100: #e8eef8;
+      --gray-300: #b0bdd4;
+      --gray-500: #6b7c99;
+      --gray-700: #3a4a62;
+      --text-primary: #0f2545;
+      --text-secondary: #4a5f80;
+      --text-muted: #7a8eac;
+      --card-bg: #ffffff;
+      --card-border: rgba(0, 180, 216, 0.15);
+      --section-alt: #f4f8ff;
+      --font-display: 'Poppins', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --radius: 12px;
+      --radius-lg: 20px;
+      --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--text-primary);
+      background: var(--white);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── NAVBAR ── */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5vw;
+      height: 64px;
+      background: rgba(15, 37, 69, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0, 180, 216, 0.15);
+      transition: var(--transition);
+    }
+
+    .nav-logo {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: var(--white);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-logo span {
+      color: var(--cyan);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--gray-300);
+      text-decoration: none;
+      transition: color var(--transition);
+      letter-spacing: 0.01em;
+    }
+
+    .nav-links a:hover {
+      color: var(--cyan);
+    }
+
+    .nav-cta {
+      background: var(--cyan);
+      color: var(--navy) !important;
+      padding: 7px 18px;
+      border-radius: 8px;
+      font-weight: 600 !important;
+    }
+
+    .nav-cta:hover {
+      background: var(--cyan-light);
+      color: var(--navy) !important;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: var(--transition);
+    }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, var(--navy) 0%, #0d2040 40%, #071630 100%);
+      display: flex;
+      align-items: center;
+      padding: 6rem 5vw 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-bg-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(0, 180, 216, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 180, 216, 0.05) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+
+    .hero-bg-orb {
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0, 180, 216, 0.12) 0%, transparent 70%);
+      top: -100px;
+      right: -100px;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 680px;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--cyan);
+      letter-spacing: 0.08em;
+      margin-bottom: 1.5rem;
+      padding: 6px 14px;
+      border: 1px solid rgba(0, 180, 216, 0.3);
+      border-radius: 100px;
+      background: rgba(0, 180, 216, 0.08);
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--cyan);
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 0.5;
+        transform: scale(0.8);
+      }
+    }
+
+    .hero-name {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-name .highlight {
+      color: var(--cyan);
+      position: relative;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      font-weight: 500;
+      color: var(--gray-300);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-desc {
+      font-size: 1rem;
+      color: #8ea8c8;
+      max-width: 520px;
+      margin-bottom: 2.5rem;
+      line-height: 1.8;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--cyan);
+      color: var(--navy);
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 13px 28px;
+      border-radius: var(--radius);
+      text-decoration: none;
+      transition: var(--transition);
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary:hover {
+      background: var(--cyan-light);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 180, 216, 0.3);
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      color: var(--white);
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: 0.9rem;
+      padding: 12px 28px;
+      border-radius: var(--radius);
+      text-decoration: none;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--cyan);
+      color: var(--cyan);
+      transform: translateY(-2px);
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 2.5rem;
+      margin-top: 3.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .stat-num {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--cyan);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 0.75rem;
+      color: var(--gray-500);
+      margin-top: 4px;
+      letter-spacing: 0.03em;
+    }
+
+    .hero-visual {
+      position: absolute;
+      right: 5vw;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      opacity: 0.85;
+    }
+
+    .terminal-card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(0, 180, 216, 0.2);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: #8ea8c8;
+      min-width: 280px;
+    }
+
+    .terminal-card .tc-header {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 12px;
+    }
+
+    .tc-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+
+    .tc-dot.r {
+      background: #ff5f56;
+    }
+
+    .tc-dot.y {
+      background: #ffbd2e;
+    }
+
+    .tc-dot.g {
+      background: #27c93f;
+    }
+
+    .tc-line {
+      color: #8ea8c8;
+      margin: 3px 0;
+    }
+
+    .tc-line .cmd {
+      color: var(--cyan);
+    }
+
+    .tc-line .pass {
+      color: #27c93f;
+    }
+
+    .tc-line .fail {
+      color: #ff6b6b;
+    }
+
+    .tc-line .info {
+      color: #90e0ef;
+    }
+
+    /* ── SECTIONS ── */
+    section {
+      padding: 5rem 5vw;
+    }
+
+    section:nth-child(even) {
+      background: var(--section-alt);
+    }
+
+    .section-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--cyan);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .section-subtitle {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      max-width: 540px;
+      line-height: 1.7;
+    }
+
+    .section-header {
+      margin-bottom: 3rem;
+    }
+
+    /* ── ABOUT ── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .about-avatar {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+
+    .avatar-frame {
+      width: 280px;
+      height: 280px;
+      border-radius: var(--radius-lg);
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      border: 2px solid rgba(0, 180, 216, 0.3);
+    }
+
+    .avatar-initials {
+      font-family: var(--font-display);
+      font-size: 5rem;
+      font-weight: 800;
+      color: var(--cyan);
+      opacity: 0.9;
+      letter-spacing: -0.04em;
+    }
+
+    .avatar-badge {
+      position: absolute;
+      bottom: -12px;
+      right: -12px;
+      background: var(--cyan);
+      color: var(--navy);
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.7rem;
+      padding: 8px 14px;
+      border-radius: 8px;
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+    }
+
+    .about-text p {
+      color: var(--text-secondary);
+      margin-bottom: 1.25rem;
+      line-height: 1.8;
+    }
+
+    .about-highlights {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 2rem;
+    }
+
+    .highlight-card {
+      background: var(--white);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 1rem;
+      text-align: center;
+      transition: var(--transition);
+    }
+
+    .highlight-card:hover {
+      border-color: var(--cyan);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0, 180, 216, 0.12);
+    }
+
+    .highlight-icon {
+      font-size: 1.5rem;
+      color: var(--cyan);
+      margin-bottom: 6px;
+    }
+
+    .highlight-card h4 {
+      font-family: var(--font-display);
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--navy);
+    }
+
+    /* ── SKILLS ── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .skill-category {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      transition: var(--transition);
+    }
+
+    .skill-category:hover {
+      box-shadow: 0 12px 40px rgba(0, 64, 128, 0.1);
+      border-color: rgba(0, 180, 216, 0.35);
+    }
+
+    .skill-category h3 {
+      font-family: var(--font-display);
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .skill-category h3 i {
+      color: var(--cyan);
+      font-size: 1rem;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .skill-tag {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 500;
+      padding: 5px 12px;
+      border-radius: 100px;
+      background: var(--off-white);
+      color: var(--navy-mid);
+      border: 1px solid var(--gray-100);
+      transition: var(--transition);
+    }
+
+    .skill-tag:hover {
+      background: var(--cyan);
+      color: var(--navy);
+      border-color: var(--cyan);
+    }
+
+    .skill-tag.featured {
+      background: rgba(0, 180, 216, 0.1);
+      color: #005f80;
+      border-color: rgba(0, 180, 216, 0.3);
+      font-weight: 600;
+    }
+
+    /* Tool bars */
+    .tool-bar-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .tool-bar-item {}
+
+    .tool-bar-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 6px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--navy);
+    }
+
+    .tool-bar-pct {
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+    }
+
+    .tool-bar-track {
+      height: 5px;
+      background: var(--gray-100);
+      border-radius: 100px;
+      overflow: hidden;
+    }
+
+    .tool-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--cyan) 0%, #48cae4 100%);
+      border-radius: 100px;
+      width: 0;
+      transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* ── EXPERIENCE ── */
+    .exp-summary-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .exp-summary-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      min-height: 140px;
+    }
+
+    .exp-summary-card strong {
+      font-family: var(--font-display);
+      font-size: 2.1rem;
+      color: var(--cyan);
+      line-height: 1;
+    }
+
+    .exp-summary-card p {
+      margin: 0;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .exp-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    .exp-sidebar {
+      position: sticky;
+      top: 100px;
+      padding: 1.5rem;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 10px;
+      bottom: 0;
+      width: 2px;
+      background: rgba(0, 180, 216, 0.2);
+    }
+
+    .timeline-item {
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+      padding: 1rem 1rem 1rem 1.25rem;
+      background: transparent;
+      border: 1px solid transparent;
+      border-radius: var(--radius);
+      text-align: left;
+      width: 100%;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .timeline-item:hover {
+      background: rgba(0, 180, 216, 0.04);
+    }
+
+    .timeline-item.active {
+      background: rgba(0, 180, 216, 0.12);
+      border-color: rgba(0, 180, 216, 0.25);
+    }
+
+    .timeline-item h4 {
+      margin: 0 0 0.15rem;
+      font-size: 0.95rem;
+      color: var(--navy);
+    }
+
+    .timeline-item p {
+      margin: 0;
+      color: var(--text-secondary);
+      font-size: 0.84rem;
+    }
+
+    .timeline-item span {
+      display: block;
+      margin-top: 0.35rem;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .timeline-dot {
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--cyan);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--navy);
+      font-size: 0.85rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .timeline-item h4 {
+      margin: 0 0 0.3rem;
+      font-size: 0.95rem;
+      color: var(--navy);
+    }
+
+    .timeline-item p {
+      margin: 0;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      line-height: 1.6;
+    }
+
+    .timeline-item span {
+      display: block;
+      margin-top: 0.5rem;
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+    }
+
+    .exp-main {
+      position: relative;
+    }
+
+    .exp-card {
+      background: var(--navy);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .exp-card::before {
+      content: '';
+      position: absolute;
+      top: -30px;
+      right: -40px;
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: rgba(0, 180, 216, 0.15);
+    }
+
+    .exp-card-header {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: flex-start;
+      margin-bottom: 1.5rem;
+    }
+
+    .exp-status-pill {
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--cyan);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 999px;
+      padding: 0.5rem 0.95rem;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .exp-role-title {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--white);
+      margin: 0;
+      line-height: 1.1;
+    }
+
+    .exp-role-sub {
+      margin: 0.5rem 0 0;
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.82);
+      font-family: var(--font-mono);
+      letter-spacing: 0.02em;
+    }
+
+    .exp-meta {
+      margin-top: 0.75rem;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+    .exp-description {
+      margin: 1.75rem 0 0;
+      color: rgba(255, 255, 255, 0.85);
+      line-height: 1.8;
+      max-width: 680px;
+    }
+
+    .exp-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin: 1.25rem 0;
+    }
+
+    .exp-tags .exp-tag {
+      background: rgba(255, 255, 255, 0.08);
+      color: rgba(255, 255, 255, 0.88);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 999px;
+      padding: 0.5rem 0.9rem;
+      font-size: 0.78rem;
+    }
+
+    .exp-card-section {
+      margin-top: 1.75rem;
+    }
+
+    .exp-card-section h4 {
+      margin: 0 0 0.75rem;
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.76);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+    }
+
+    .exp-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .exp-bullets li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.86);
+      line-height: 1.7;
+    }
+
+    .exp-bullets li::before {
+      content: '';
+      width: 7px;
+      height: 7px;
+      margin-top: 8px;
+      border-radius: 50%;
+      background: var(--cyan);
+      flex-shrink: 0;
+    }
+
+    .exp-tech-grid {
+      margin-top: 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 0.85rem;
+    }
+
+    .exp-tech-card {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius);
+      padding: 0.85rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 0.9rem;
+    }
+
+    .exp-tech-card i {
+      color: var(--cyan);
+      font-size: 1.1rem;
+    }
+
+    /* ── PORTFOLIO ── */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .project-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      position: relative;
+      overflow: hidden;
+      min-height: 280px;
+    }
+
+    .project-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--cyan) 0%, transparent 100%);
+      opacity: 0;
+      transition: var(--transition);
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 48px rgba(0, 64, 128, 0.12);
+      border-color: rgba(0, 180, 216, 0.3);
+    }
+
+    .project-card:hover::before {
+      opacity: 1;
+    }
+
+    .project-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(0, 180, 216, 0.15) 0%, rgba(0, 64, 128, 0.1) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      color: var(--cyan);
+    }
+
+    .project-card h3 {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.3;
+    }
+
+    .project-card p {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      flex: 1;
+    }
+
+    .project-tools {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, auto));
+      gap: 0.65rem;
+    }
+
+    .project-tool-tag {
+      font-size: 0.75rem;
+      font-family: var(--font-mono);
+      padding: 5px 10px;
+      border-radius: 8px;
+      background: var(--off-white);
+      color: var(--navy-mid);
+      border: 1px solid var(--gray-100);
+      white-space: nowrap;
+    }
+
+    .project-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+      padding-top: 0.75rem;
+      border-top: 1px solid var(--gray-100);
+    }
+
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--cyan);
+      text-decoration: none;
+      padding: 0.75rem 1rem;
+      border-radius: 999px;
+      background: rgba(0, 180, 216, 0.06);
+      transition: var(--transition);
+    }
+
+    .project-link:hover {
+      color: var(--navy);
+      background: rgba(0, 180, 216, 0.12);
+    }
+
+    /* ── CERTIFICATIONS ── */
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .cert-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      transition: var(--transition);
+    }
+
+    .cert-card:hover {
+      border-color: var(--cyan);
+      box-shadow: 0 4px 20px rgba(0, 180, 216, 0.12);
+    }
+
+    .cert-icon {
+      width: 44px;
+      height: 44px;
+      flex-shrink: 0;
+      border-radius: 10px;
+      background: rgba(0, 180, 216, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      color: var(--cyan);
+    }
+
+    .cert-info h4 {
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--navy);
+    }
+
+    .cert-info p {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    /* ── CONTACT ── */
+    #contact {
+      background: var(--navy);
+    }
+
+    #contact .section-eyebrow {
+      color: var(--cyan);
+    }
+
+    #contact .section-title {
+      color: var(--white);
+    }
+
+    #contact .section-subtitle {
+      color: #8ea8c8;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(280px, 1fr) minmax(420px, 1.2fr);
+      gap: 2rem;
+      align-items: stretch;
+    }
+
+    .contact-info {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 28px;
+      padding: 1.75rem;
+      display: grid;
+      gap: 1.25rem;
+      min-height: 520px;
+    }
+
+    .contact-panel {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      display: grid;
+      gap: 1.5rem;
+      min-height: 520px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .contact-panel::before {
+      content: '';
+      position: absolute;
+      top: -20px;
+      right: -20px;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: rgba(39, 197, 255, 0.08);
+    }
+
+    .contact-panel::after {
+      content: '';
+      position: absolute;
+      bottom: 20px;
+      left: -20px;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: rgba(34, 112, 207, 0.08);
+    }
+
+    .contact-panel-header {
+      display: grid;
+      gap: 0.75rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      margin-bottom: 1rem;
+    }
+
+    .contact-panel-header h3 {
+      margin: 0;
+      font-size: 1.9rem;
+      color: var(--white);
+      line-height: 1.05;
+    }
+
+    .contact-panel-header p {
+      margin: 0;
+      color: var(--text-muted);
+      max-width: 100%;
+      line-height: 1.75;
+    }
+
+    .panel-section-title {
+      font-size: 0.8rem;
+      color: var(--cyan);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .contact-chip-grid,
+    .interest-card-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(180px, 1fr));
+      gap: 1rem;
+    }
+
+    .contact-chip,
+    .interest-card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 20px;
+      padding: 1.2rem 1.25rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 0.85rem;
+      min-height: 140px;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .contact-chip:hover,
+    .interest-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(0, 180, 216, 0.3);
+    }
+
+    .contact-chip-icon,
+    .interest-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      color: var(--white);
+      background: rgba(0, 180, 216, 0.18);
+      flex-shrink: 0;
+    }
+
+    .contact-chip-title,
+    .interest-title {
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin: 0;
+    }
+
+    .contact-chip-text,
+    .interest-text {
+      margin: 0;
+      color: var(--white);
+      line-height: 1.6;
+      font-size: 0.92rem;
+    }
+
+    .contact-chip-actions {
+      margin-top: auto;
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+
+    .contact-chip-action {
+      color: var(--cyan);
+      font-size: 0.85rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: color 0.2s ease;
+    }
+
+    .contact-chip-action:hover {
+      color: #b7e9ff;
+    }
+
+    .interest-card.vip {
+      border-color: rgba(45, 212, 191, 0.4);
+    }
+
+    .interest-card h4 {
+      margin: 0;
+      color: var(--white);
+      font-size: 1rem;
+    }
+
+    .interest-card p {
+      margin: 0;
+      color: var(--text-muted);
+      line-height: 1.7;
+      font-size: 0.88rem;
+    }
+
+    .contact-info {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .contact-item {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 1.1rem;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      min-height: 82px;
+    }
+
+    .contact-item-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 16px;
+      background: rgba(0, 180, 216, 0.18);
+      border: 1px solid rgba(0, 180, 216, 0.24);
+      color: #b7e9ff;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .contact-item h4 {
+      margin: 0;
+      font-size: 0.75rem;
+      color: #8cb8ff;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 600;
+    }
+
+    .contact-item p {
+      margin: 0;
+      color: var(--white);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .contact-item button {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--cyan);
+      border-radius: 999px;
+      padding: 0.55rem 0.85rem;
+      cursor: pointer;
+      font-size: 0.85rem;
+    }
+
+    .contact-item button:hover {
+      background: rgba(0, 180, 216, 0.18);
+    }
+
+    .contact-info .cv-title {
+      color: var(--white);
+      font-size: 1.05rem;
+    }
+
+    .contact-info .btn-cv {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: linear-gradient(135deg, var(--cyan), #2dd4bf);
+      color: var(--navy);
+      padding: 0.9rem 1.25rem;
+      border-radius: var(--radius);
+      text-decoration: none;
+      font-weight: 700;
+      transition: var(--transition);
+    }
+
+    .contact-info .btn-cv:hover {
+      background: #2dd4bf;
+      box-shadow: 0 14px 30px rgba(45, 212, 191, 0.16);
+      transform: translateY(-2px);
+    }
+
+    .contact-info .social-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+
+    .contact-info .social-link {
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.03);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      text-decoration: none;
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+
+    .contact-info .social-link:hover {
+      background: rgba(0, 180, 216, 0.18);
+      color: var(--white);
+      border-color: rgba(0, 180, 216, 0.3);
+    }
+
+    .contact-info .cv-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1.25rem 1.5rem;
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-info .cv-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--gray-500);
+      margin-bottom: 0.25rem;
+    }
+
+    .about-avatar .about-highlights {
+      margin-top: 1rem;
+      justify-content: flex-start;
+    }
+
+    .highlight-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 1rem 1.25rem;
+      min-width: 180px;
+      max-width: 240px;
+      text-align: center;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+    }
+
+    .highlight-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: rgba(0, 180, 216, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 10px;
+      color: var(--cyan);
+      font-size: 1.25rem;
+    }
+
+    .highlight-card h4 {
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin: 0 0 6px;
+    }
+
+    .highlight-card p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin: 0;
+    }
+
+    /* full-width features row under About */
+    .about-features {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin: 2rem 0 0 0;
+      align-items: stretch;
+    }
+
+    @media (max-width: 980px) {
+      .about-features {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .about-features {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Skills & Tools cards */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .skill-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 1.25rem;
+      box-shadow: 0 6px 20px rgba(13, 19, 31, 0.04);
+    }
+
+    .skill-card h3 {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      margin: 0 0 0.75rem 0;
+      color: var(--navy);
+    }
+
+    .skill-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--off-white);
+      color: var(--navy);
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--gray-100);
+      margin: 6px 8px 6px 0;
+      font-size: 0.9rem;
+    }
+
+    .skill-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tool-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 12px 0;
+    }
+
+    .tool-name {
+      width: 90px;
+      font-size: 0.9rem;
+      color: var(--navy);
+    }
+
+    .progress {
+      flex: 1;
+      height: 8px;
+      background: rgba(14, 26, 46, 0.06);
+      border-radius: 999px;
+      position: relative;
+    }
+
+    .progress-fill {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--cyan), var(--cyan-light));
+    }
+
+    .tool-pct {
+      width: 42px;
+      text-align: right;
+      font-size: 0.85rem;
+      color: var(--navy-mid);
+    }
+
+    /* bottom wide cards */
+    .skills-bottom {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .skills-ai {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .ai-box {
+      width: 96px;
+      height: 96px;
+      background: linear-gradient(180deg, #f3f7ff, #eef6ff);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      color: var(--cyan);
+    }
+
+    .approach-grid {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .approach-item {
+      flex: 1;
+      text-align: center;
+      padding: 12px;
+      border-radius: 10px;
+      background: var(--off-white);
+      border: 1px solid var(--card-border);
+    }
+
+    .approach-item h4 {
+      margin: 8px 0 6px;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 980px) {
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .skills-bottom {
+        grid-template-columns: 1fr;
+      }
+
+      .approach-grid {
+        flex-direction: row;
+        gap: 0.75rem;
+      }
+    }
+
+    /* responsive contact panel */
+    @media (max-width: 640px) {
+
+      .contact-panel .contact-chip-grid,
+      .contact-panel .interest-card-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Form */
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .form-group label {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--gray-300);
+      letter-spacing: 0.03em;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius);
+      padding: 11px 14px;
+      color: var(--white);
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      transition: var(--transition);
+      outline: none;
+      width: 100%;
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: var(--gray-500);
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--cyan);
+      background: rgba(0, 180, 216, 0.07);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .form-submit {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--cyan);
+      color: var(--navy);
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 0.9rem;
+      padding: 13px 28px;
+      border-radius: var(--radius);
+      border: none;
+      cursor: pointer;
+      transition: var(--transition);
+      align-self: flex-start;
+    }
+
+    .form-submit:hover {
+      background: var(--cyan-light);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 180, 216, 0.3);
+    }
+
+    .form-submit:disabled {
+      opacity: 0.75;
+      cursor: not-allowed;
+    }
+
+    .form-success,
+    .form-error {
+      display: none;
+      border-radius: var(--radius);
+      padding: 1rem 1.25rem;
+      font-size: 0.9rem;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 0.75rem;
+    }
+
+    .form-success {
+      background: rgba(39, 201, 63, 0.1);
+      border: 1px solid rgba(39, 201, 63, 0.3);
+      color: #6ee7b7;
+    }
+
+    .form-error {
+      background: rgba(255, 80, 80, 0.1);
+      border: 1px solid rgba(255, 80, 80, 0.3);
+      color: #ff4d4d;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #07131f;
+      color: var(--gray-500);
+      text-align: center;
+      padding: 1.5rem 5vw;
+      font-size: 0.8rem;
+      font-family: var(--font-mono);
+    }
+
+    footer span {
+      color: var(--cyan);
+    }
+
+    /* ── SCROLL ANIMATIONS ── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .fade-up:nth-child(2) {
+      transition-delay: 0.1s;
+    }
+
+    .fade-up:nth-child(3) {
+      transition-delay: 0.2s;
+    }
+
+    .fade-up:nth-child(4) {
+      transition-delay: 0.3s;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+
+      .about-grid,
+      .exp-wrapper,
+      .contact-grid,
+      .skills-grid,
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .contact-info,
+      .contact-panel {
+        min-height: auto;
+      }
+
+      .exp-sidebar {
+        position: static;
+      }
+
+      .hero-visual {
+        display: none;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .about-highlights {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .project-card {
+        min-height: auto;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .about-highlights {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-stats {
+        gap: 1.5rem;
+      }
+
+      .achievement-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .portfolio-grid {
+        gap: 1.25rem;
+      }
+
+      .project-card {
+        padding: 1.25rem;
+      }
+
+      .project-card h3 {
+        font-size: 0.96rem;
+      }
+
+      .project-card p {
+        font-size: 0.84rem;
+      }
+
+      .project-tools {
+        grid-template-columns: 1fr;
+      }
+
+      .project-link {
+        width: 100%;
+      }
+    }
+
+    /* Mobile menu open state */
+    .nav-links.open {
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      top: 64px;
+      left: 0;
+      right: 0;
+      background: rgba(15, 37, 69, 0.98);
+      padding: 1.5rem 5vw 2rem;
+      border-bottom: 1px solid rgba(0, 180, 216, 0.15);
+      gap: 1.25rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ── NAVBAR ── -->
+  <nav id="navbar">
+    <a href="#hero" class="nav-logo">Faizi<span>.</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#contact" class="nav-cta">Hubungi Saya</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section id="hero">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-bg-orb"></div>
+
+    <div class="hero-content">
+      <div class="hero-eyebrow">🟢 Available for Work</div>
+      <h1 class="hero-name">
+        Mochamad Noer<br><span class="highlight">Faizi</span> Supriatna Putra
+      </h1>
+      <p class="hero-title">Quality Assurance Engineer</p>
+      <p class="hero-desc">
+        Ensuring software quality through structured<br>
+        manual testing, UI testing, API testing,<br>
+        and automation testing to deliver reliable products.
+      </p>
+      <div class="hero-buttons">
+        <a href="#portfolio" class="btn-primary">Explore Portfolio</a>
+        <a href="#contact" class="btn-outline">Contact Me</a>
+      </div>
+    </div>
+
+    <div class="hero-visual" aria-hidden="true">
+      <div class="terminal-card">
+        <div class="tc-header">
+          <div class="tc-dot r"></div>
+          <div class="tc-dot y"></div>
+          <div class="tc-dot g"></div>
+        </div>
+        <div class="tc-line"><span class="info"><strong>Testing Profile</strong></span></div>
+        <div class="tc-line"><span class="info">Manual Testing</span></div>
+        <div class="tc-line"><span class="info">██████████████ 100%</span></div>
+        <div class="tc-line"><span class="info">UI Testing</span></div>
+        <div class="tc-line"><span class="info">████████████ 90%</span></div>
+        <div class="tc-line"><span class="info">API Testing</span></div>
+        <div class="tc-line"><span class="info">███████ 60%</span></div>
+        <div class="tc-line"><span class="info">Automation Testing</span></div>
+        <div class="tc-line"><span class="info">████████ 70%</span></div>
+      </div>
+
+      <div class="terminal-card">
+        <div class="tc-header">
+          <div class="tc-dot r"></div>
+          <div class="tc-dot y"></div>
+          <div class="tc-dot g"></div>
+        </div>
+        <div class="tc-line"><span class="info"><strong>QA Skills</strong></span></div>
+        <div class="tc-line"><span class="pass">✓ Manual Testing</span></div>
+        <div class="tc-line"><span class="pass">✓ Functional Testing</span></div>
+        <div class="tc-line"><span class="pass">✓ Regression Testing</span></div>
+        <div class="tc-line"><span class="pass">✓ Smoke Testing</span></div>
+        <div class="tc-line"><span class="pass">✓ UI Testing</span></div>
+        <div class="tc-line"><span class="pass">✓ API Testing</span></div>
+        <div class="tc-line"><span class="pass">✓ Automation Testing</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ABOUT ── -->
+  <section id="about">
+    <div class="about-grid">
+      <div class="about-avatar fade-up">
+        <div class="avatar-frame">
+          <span class="avatar-initials">FZ</span>
+          <div class="avatar-badge">QA Engineer</div>
+        </div>
+      </div>
+      <div class="about-text fade-up">
+        <span class="section-eyebrow">// ABOUT ME</span>
+        <h2 class="section-title">Hi, I&#8217;m Mochamad Noer<br><span class="highlight">Faizi</span> Supriatna Putra
+        </h2>
+        <p class="hero-title">Quality Assurance Engineer</p>
+        <p>
+          I am a detail-oriented QA Engineer with a strong passion for ensuring software quality and delivering great
+          user experiences. I have solid experience in <a href="#">Manual Testing</a>, <a href="#">UI Testing</a>, <a
+            href="#">API Testing</a>, and <a href="#">Automation Testing</a>.
+        </p>
+        <p>
+          I believe quality is not just about finding bugs, but about building confidence in every release. I enjoy
+          working in collaborative teams, creating effective test strategies, and continuously learning new technologies
+          to improve testing efficiency and product reliability.
+        </p>
+        <p>
+          I&#8217;m always eager to take on new challenges and contribute to building innovative, user-focused digital
+          products.
+        </p>
+
+      </div>
+    </div>
+
+    <div class="about-features">
+      <div class="highlight-card">
+        <div class="highlight-icon"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></div>
+        <h4>Detail-Oriented</h4>
+        <p>I pay close attention to details to ensure every feature works as expected.</p>
+      </div>
+      <div class="highlight-card">
+        <div class="highlight-icon"><i class="fa-solid fa-bullseye" aria-hidden="true"></i></div>
+        <h4>Quality Focused</h4>
+        <p>I focus on delivering high-quality software through structured testing and validation.</p>
+      </div>
+      <div class="highlight-card">
+        <div class="highlight-icon"><i class="fa-solid fa-robot" aria-hidden="true"></i></div>
+        <h4>Automation Enthusiast</h4>
+        <p>I enjoy building automation solutions to increase efficiency and reduce repetitive tasks.</p>
+      </div>
+      <div class="highlight-card">
+        <div class="highlight-icon"><i class="fa-solid fa-users" aria-hidden="true"></i></div>
+        <h4>Team Player</h4>
+        <p>I value collaboration and communication to achieve the best results together.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SKILLS ── -->
+  <section id="skills">
+    <div class="section-header fade-up">
+      <span class="section-eyebrow">// skills &amp; tools</span>
+      <h2 class="section-title">Skills &amp; Technologies</h2>
+      <p class="section-subtitle">The tools, technologies, and methodologies I use to ensure
+        High-Quality Software and Deliver reliable user experiences.</p>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h3><i class="fa-solid fa-vial-circle-check" aria-hidden="true"></i> Testing Types</h3>
+        <div class="skill-pills">
+          <span class="skill-pill">Manual Testing</span>
+          <span class="skill-pill">UI Testing</span>
+          <span class="skill-pill">API Testing</span>
+          <span class="skill-pill">Performance Testing</span>
+          <span class="skill-pill">Regression Testing</span>
+          <span class="skill-pill">Smoke Testing</span>
+          <span class="skill-pill">Mobile Testing</span>
+          <span class="skill-pill">UAT (User Acceptance)</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <h3><i class="fa-solid fa-wrench" aria-hidden="true"></i> Tools &amp; Automation</h3>
+        <div class="tool-row">
+          <div class="tool-name">Postman</div>
+          <div class="progress">
+            <div class="progress-fill" style="width:75%"></div>
+          </div>
+          <div class="tool-pct">75%</div>
+        </div>
+        <div class="tool-row">
+          <div class="tool-name">JMeter</div>
+          <div class="progress">
+            <div class="progress-fill" style="width:70%"></div>
+          </div>
+          <div class="tool-pct">70%</div>
+        </div>
+        <div class="tool-row">
+          <div class="tool-name">Katalon</div>
+          <div class="progress">
+            <div class="progress-fill" style="width:65%"></div>
+          </div>
+          <div class="tool-pct">65%</div>
+        </div>
+        <div class="tool-row">
+          <div class="tool-name">Cypress</div>
+          <div class="progress">
+            <div class="progress-fill" style="width:70%"></div>
+          </div>
+          <div class="tool-pct">70%</div>
+        </div>
+        <div class="tool-row">
+          <div class="tool-name">Playwright</div>
+          <div class="progress">
+            <div class="progress-fill" style="width:70%"></div>
+          </div>
+          <div class="tool-pct">70%</div>
+        </div>
+        <div class="tool-row">
+          <div class="tool-name">Jira</div>
+          <div class="progress">
+            <div class="progress-fill" style="width:75%"></div>
+          </div>
+          <div class="tool-pct">75%</div>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <h3><i class="fa-solid fa-diagram-project" aria-hidden="true"></i> Test Management &amp; Processes</h3>
+        <div class="skill-pills">
+          <span class="skill-pill">Test Case Management</span>
+          <span class="skill-pill">Test Report</span>
+          <span class="skill-pill">BA &amp; Go Live</span>
+          <span class="skill-pill">Test Case Documentation</span>
+          <span class="skill-pill">Bug Reporting</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="skills-bottom">
+      <div class="skill-card skills-ai">
+        <div class="ai-box">AI</div>
+        <div>
+          <h3>AI &amp; Supporting Technologies</h3>
+          <p>Leveraging AI to improve efficiency and effectiveness in testing and documentation.</p>
+          <div style="margin-top:12px" class="skill-pills">
+            <span class="skill-pill">AI Test Case Generation</span>
+            <span class="skill-pill">Test Data Generation</span>
+            <span class="skill-pill">Bug Analysis &amp; Triage</span>
+            <span class="skill-pill">Prompt Engineering</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <h3><i class="fa-regular fa-lightbulb"></i> My Approach</h3>
+        <div class="approach-grid">
+          <div class="approach-item"><i class="fa-solid fa-eye" style="font-size:20px;color:var(--cyan)"></i>
+            <h4>Detail-Oriented</h4>
+            <p style="font-size:0.85rem;color:var(--text-muted)">I pay close attention to details to ensure the quality
+              of every feature.</p>
+          </div>
+          <div class="approach-item"><i class="fa-solid fa-bullseye" style="font-size:20px;color:var(--cyan)"></i>
+            <h4>Quality Focused</h4>
+            <p style="font-size:0.85rem;color:var(--text-muted)">Committed to delivering high-quality software through
+              structured testing processes.</p>
+          </div>
+          <div class="approach-item"><i class="fa-solid fa-robot" style="font-size:20px;color:var(--cyan)"></i>
+            <h4>Automation Mindset</h4>
+            <p style="font-size:0.85rem;color:var(--text-muted)">Always looking for ways to automate and improve testing
+              efficiency.</p>
+          </div>
+          <div class="approach-item"><i class="fa-solid fa-users" style="font-size:20px;color:var(--cyan)"></i>
+            <h4>Collaborative</h4>
+            <p style="font-size:0.85rem;color:var(--text-muted)">Working together with teams to achieve the best
+              results.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── EXPERIENCE ── -->
+  <section id="experience">
+    <div class="section-header fade-up">
+      <span class="section-eyebrow">// work_experience</span>
+      <h2 class="section-title">Pengalaman Kerja</h2>
+    </div>
+
+    <div class="exp-summary-grid fade-up">
+      <div class="exp-summary-card">
+        <strong>1+</strong>
+        <p>Tahun pengalaman dalam quality assurance, pengujian manual, dan otomatisasi.</p>
+      </div>
+      <div class="exp-summary-card">
+        <strong>10+</strong>
+        <p>Proyek QA yang telah dikerjakan meliputi web, mobile, dan API testing.</p>
+      </div>
+      <div class="exp-summary-card">
+        <strong>200+</strong>
+        <p>Test case dummy terstruktur, mencakup regresi, fungsional, dan integrasi.</p>
+      </div>
+    </div>
+
+    <div class="exp-wrapper">
+      <div class="exp-sidebar fade-up">
+        <div class="timeline">
+          <button class="timeline-item active" type="button" data-job="digistar">
+            <div class="timeline-dot">DI</div>
+            <div>
+              <h4>Software Quality Assurance</h4>
+              <p>Digistar Internship</p>
+              <span>Jan 2026 — Des 2026</span>
+            </div>
+          </button>
+          <button class="timeline-item" type="button" data-job="fabdigital">
+            <div class="timeline-dot">FAB</div>
+            <div>
+              <h4>Software Quality Assurance</h4>
+              <p>Project Based Mediatron</p>
+              <span>Mar 2022 — Des 2025</span>
+            </div>
+          </button>
+          <button class="timeline-item" type="button" data-job="klinik">
+            <div class="timeline-dot">AD</div>
+            <div>
+              <h4>Clinic Administrator</h4>
+              <p>Klinik Mustopa</p>
+              <span>Sep 2019 — Des 2019</span>
+            </div>
+          </button>
+        </div>
+      </div>
+
+      <div class="exp-main fade-up">
+        <div class="exp-card">
+          <div class="exp-card-header">
+            <span class="exp-status-pill">Aktif</span>
+            <div>
+              <h3 class="exp-role-title">QA Engineer</h3>
+              <p class="exp-role-sub">Quality Assurance · Digital Experience</p>
+              <p class="exp-meta">Telkom • 2022 — Sekarang • Indonesia</p>
+            </div>
+          </div>
+
+          <p class="exp-description">Bertanggung jawab memastikan kualitas produk digital melalui pengujian manual dan
+            otomatis, serta kolaborasi lintas tim untuk memastikan pengiriman fitur yang andal dan stabil.</p>
+
+          <div class="exp-tags"></div>
+
+          <div class="exp-card-section">
+            <h4>Tanggung Jawab Utama</h4>
+            <ul class="exp-bullets"></ul>
+          </div>
+
+          <div class="exp-card-section">
+            <h4>Teknologi & Alat yang Digunakan</h4>
+            <div class="exp-tech-grid"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PORTFOLIO ── -->
+  <section id="portfolio">
+    <div class="section-header fade-up">
+      <span class="section-eyebrow">// portfolio</span>
+      <h2 class="section-title">Proyek &amp; Portfolio</h2>
+      <p class="section-subtitle">Beberapa proyek QA yang mencerminkan pendekatan dan keahlian saya dalam pengujian
+        software.</p>
+    </div>
+
+    <div class="portfolio-grid">
+      <div class="project-card fade-up">
+        <div class="project-icon"><i class="fa-solid fa-futbol" aria-hidden="true"></i></div>
+        <h3>Aplikasi Penyewaan Lapangan Futsal</h3>
+        <p>Aplikasi ini dibuat sebagai tugas besar kampus untuk memudahkan penyewaan lapangan futsal secara online.
+          Dibangun menggunakan Laravel dan PHP dengan fitur jadwal, reservasi, dan manajemen pelanggan.</p>
+        <div class="project-tools">
+          <span class="project-tool-tag">Laravel</span>
+          <span class="project-tool-tag">PHP</span>
+          <span class="project-tool-tag">MySQL</span>
+          <span class="project-tool-tag">Bootstrap</span>
+        </div>
+        <div class="project-links">
+          <a href="#" class="project-link"><i class="fa-brands fa-github"></i> Repository</a>
+          <a href="#" class="project-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> Detail</a>
+        </div>
+      </div>
+
+      <div class="project-card fade-up">
+        <div class="project-icon"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i></div>
+        <h3>Trustmeet Online Learning</h3>
+        <p>Aplikasi online learning ini dibuat untuk tugas besar kampus, menampilkan kelas, materi, dan sistem ujian.
+          Backend menggunakan Laravel dan PHP, dengan antarmuka yang responsif untuk siswa dan instruktur.</p>
+        <div class="project-tools">
+          <span class="project-tool-tag">Laravel</span>
+          <span class="project-tool-tag">PHP</span>
+          <span class="project-tool-tag">Vue.js</span>
+          <span class="project-tool-tag">Tailwind</span>
+        </div>
+        <div class="project-links">
+          <a href="#" class="project-link"><i class="fa-brands fa-github"></i> Repository</a>
+          <a href="#" class="project-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> Detail</a>
+        </div>
+      </div>
+
+      <div class="project-card fade-up">
+        <div class="project-icon"><i class="fa-solid fa-utensils" aria-hidden="true"></i></div>
+        <h3>Dapur Abah Lennon — Catering Android</h3>
+        <p>Aplikasi Android untuk layanan catering makanan, dibuat sebagai tugas besar kampus menggunakan Kotlin.
+          Menyediakan menu, pemesanan, dan fitur pelacakan pesanan untuk pelanggan.</p>
+        <div class="project-tools">
+          <span class="project-tool-tag">Kotlin</span>
+          <span class="project-tool-tag">Android</span>
+          <span class="project-tool-tag">Firebase</span>
+          <span class="project-tool-tag">Material UI</span>
+        </div>
+        <div class="project-links">
+          <a href="#" class="project-link"><i class="fa-brands fa-github"></i> Repository</a>
+          <a href="#" class="project-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> Detail</a>
+        </div>
+      </div>
+
+      <div class="project-card fade-up">
+        <div class="project-icon"><i class="fa-solid fa-robot" aria-hidden="true"></i></div>
+        <h3>Test Case Generator AI</h3>
+        <p>Implementasi aplikasi pembuatan test case menggunakan AI, terhubung dengan project management TAIGA.
+          Dibangun untuk Tugas Akhir dengan GPT-5 sebagai engine pembuatan kasus uji otomatis.</p>
+        <div class="project-tools">
+          <span class="project-tool-tag">GPT-5</span>
+          <span class="project-tool-tag">Taiga</span>
+          <span class="project-tool-tag">Python</span>
+          <span class="project-tool-tag">AI</span>
+        </div>
+        <div class="project-links">
+          <a href="#" class="project-link"><i class="fa-brands fa-github"></i> Repository</a>
+          <a href="#" class="project-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> Detail</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CERTIFICATIONS ── -->
+  <section id="certifications">
+    <div class="section-header fade-up">
+      <span class="section-eyebrow">// certifications</span>
+      <h2 class="section-title">Sertifikasi</h2>
+    </div>
+    <div class="cert-grid">
+      <div class="cert-card fade-up">
+        <div class="cert-icon"><i class="fa-solid fa-certificate" aria-hidden="true"></i></div>
+        <div class="cert-info">
+          <h4>ISTQB Certified Tester Foundation</h4>
+          <p>International Software Testing Qualifications Board</p>
+        </div>
+      </div>
+      <div class="cert-card fade-up">
+        <div class="cert-icon"><i class="fa-brands fa-google" aria-hidden="true"></i></div>
+        <div class="cert-info">
+          <h4>Automation API testing</h4>
+          <p>Jago QA Co · 2024</p>
+        </div>
+      </div>
+      <div class="cert-card fade-up">
+        <div class="cert-icon"><i class="fa-solid fa-network-wired" aria-hidden="true"></i></div>
+        <div class="cert-info">
+          <h4>Automation UI testing</h4>
+          <p>Postman · Student Expert Program</p>
+        </div>
+      </div>
+      <div class="cert-card fade-up">
+        <div class="cert-icon"><i class="fa-solid fa-diagram-project" aria-hidden="true"></i></div>
+        <div class="cert-info">
+          <h4>Belajar Dasar AI</h4>
+          <p>Dicoding Indonesia · 2026</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT ── -->
+  <section id="contact">
+    <div class="section-header fade-up">
+      <span class="section-eyebrow">// get_in_touch</span>
+      <h2 class="section-title">Mari Terhubung</h2>
+      <p class="section-subtitle">Punya proyek menarik atau ingin berdiskusi soal QA? Saya terbuka untuk kolaborasi dan
+        peluang baru.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-info fade-up">
+        <div class="contact-item">
+          <div class="contact-item-icon"><i class="fa-regular fa-envelope" aria-hidden="true"></i></div>
+          <div>
+            <h4>Email</h4>
+            <p>mochnoerfaizi838@gmail.com</p>
+          </div>
+          <button type="button">Salin</button>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></div>
+          <div>
+            <h4>Lokasi</h4>
+            <p>Indonesia • Bandung, Jawa Barat</p>
+          </div>
+          <button type="button">Salin</button>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon"><i class="fa-solid fa-briefcase" aria-hidden="true"></i></div>
+          <div>
+            <h4>Status</h4>
+            <p>Open to opportunities</p>
+          </div>
+          <button type="button">Salin</button>
+        </div>
+
+        <div class="cv-card">
+          <div>
+            <p class="cv-label">Download CV</p>
+            <h3 class="cv-title">Lihat ringkasan pengalaman saya selama bekerja</h3>
+          </div>
+          <a href="https://example.com/cv.pdf" class="btn-cv" target="_blank" rel="noopener noreferrer">
+            <span>Lihat CV Saya</span>
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/mochamad-noer-faizi-supriatna-putra-112b8a244/" class="social-link"
+            aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="https://github.com/Mochanoerfaizi" class="social-link" aria-label="GitHub" target="_blank"
+            rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
+          <a href="https://www.instagram.com/" class="social-link" aria-label="Instagram" target="_blank"
+            rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
+          <a href="082215550562" class="social-link" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer"><i
+              class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+
+      <div class="contact-panel fade-up">
+        <div class="contact-panel-header">
+          <h3>Mari Terhubung!</h3>
+          <p>Saya akan merespons secepat mungkin. Silakan hubungi saya melalui platform berikut atau pilih area diskusi
+            yang paling sesuai.</p>
+        </div>
+
+        <div class="panel-section-title">Terhubung di</div>
+        <div class="contact-chip-grid">
+          <div class="contact-chip">
+            <div class="contact-chip-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+            <p class="contact-chip-title">LinkedIn</p>
+            <p class="contact-chip-text">/in/Mochamad Noer Faizi Supriatna Putra</p>
+          </div>
+          <div class="contact-chip">
+            <div class="contact-chip-icon"><i class="fa-brands fa-github"></i></div>
+            <p class="contact-chip-title">GitHub</p>
+            <p class="contact-chip-text">/mochanoerfaizi</p>
+          </div>
+          <div class="contact-chip">
+            <div class="contact-chip-icon"><i class="fa-brands fa-instagram"></i></div>
+            <p class="contact-chip-title">Instagram</p>
+            <p class="contact-chip-text">@mochanoerfaizisp</p>
+          </div>
+          <div class="contact-chip">
+            <div class="contact-chip-icon"><i class="fa-brands fa-whatsapp"></i></div>
+            <p class="contact-chip-title">WhatsApp</p>
+            <p class="contact-chip-text">082215550562</p>
+          </div>
+        </div>
+
+        <div class="panel-section-title">Saya tertarik pada</div>
+        <div class="interest-card-grid">
+          <div class="interest-card">
+            <div class="interest-icon"><i class="fa-solid fa-rocket"></i></div>
+            <h4>Kolaborasi Proyek</h4>
+            <p>Bekerja sama dalam proyek QA, automation, atau quality improvement.</p>
+          </div>
+          <div class="interest-card">
+            <div class="interest-icon"><i class="fa-solid fa-briefcase"></i></div>
+            <h4>Peluang Karier</h4>
+            <p>Tertarik dengan peluang karier di bidang Quality Assurance.</p>
+          </div>
+          <div class="interest-card">
+            <div class="interest-icon"><i class="fa-solid fa-comments"></i></div>
+            <h4>Diskusi & Sharing</h4>
+            <p>Berdiskusi tentang testing, tools, strategi QA, dan best practices.</p>
+          </div>
+          <div class="interest-card vip">
+            <div class="interest-icon"><i class="fa-solid fa-handshake"></i></div>
+            <h4>Freelance / Part-time</h4>
+            <p>Terbuka untuk pekerjaan freelance atau part-time QA Engineer, maupun pekerjaan lainnya.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <p>Dibuat dengan <span>♥</span> oleh <span>Mochamad Noer Faizi Supriatna Putra</span> · 2025</p>
+  </footer>
+
+  <script>
+    // Hamburger menu
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+
+    // Close nav on link click
+    navLinks.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => navLinks.classList.remove('open'));
+    });
+
+    // IntersectionObserver for fade-up
+    const faders = document.querySelectorAll('.fade-up');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    faders.forEach(el => observer.observe(el));
+
+    // Animate skill bars
+    const barObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.querySelectorAll('.tool-bar-fill').forEach(bar => {
+            bar.style.width = bar.dataset.width + '%';
+          });
+          barObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+
+    document.querySelectorAll('.skill-category').forEach(el => barObserver.observe(el));
+
+    const expJobs = {
+      digistar: {
+        status: 'Internship',
+        title: 'Software Quality Assurance',
+        subtitle: 'Digistar Internship · TKP Infomedio Solution Humanika',
+        meta: 'PT Telkom Indonesia • Jan 2026 — Des 2026',
+        description: 'Melakukan pengujian aplikasi dan validasi fitur untuk memastikan kualitas produk digital, performa, serta kesesuaian dengan kebutuhan bisnis dan standar pengembangan.',
+        tags: ['Functional Testing', 'Regression Testing', 'Documentation', 'UAT', 'AI-Assisted Testing'],
+        bullets: [
+          'Prepare test cases, test reports, UAT documents, and Go-Live / Production Acceptance documents.',
+          'Perform functional testing to ensure system features meet business and technical requirements.',
+          'Develop AI-assisted test cases to improve testing efficiency and coverage.',
+          'Conduct regression testing to verify system changes do not impact existing functionality.',
+          'Identify, document, and report software defects, including detailed reproduction steps and test evidence.',
+          'Collaborate with developers, QA team members, and business stakeholders throughout the testing process.',
+          'Execute test scenarios and monitor test results to ensure the application is ready for deployment to production.'
+        ],
+        tech: ['Test Case', 'UAT', 'Regression', 'JIRA', 'AI Testing', 'Documentation']
+      },
+      fabdigital: {
+        status: 'Project Based',
+        title: 'Software Quality Assurance',
+        subtitle: 'FAB Digital · Project Based Mediatron',
+        meta: 'PT Telkom Indonesia • Mar 2022 — Des 2025',
+        description: 'Menangani quality assurance untuk produk digital FAB Digital, termasuk produk FABD dan MYTENS, dengan fokus pada pengujian fungsi, validasi proses bisnis, serta dokumentasi kualitas sesuai standar perusahaan.',
+        tags: ['Manual Testing', 'Automation Testing', 'API Testing', 'Load Testing', 'UAT', 'Business Process Testing'],
+        bullets: [
+          'Create test plan and test report for invoicing process (purchase order, billing statement, payment, invoice, and tax invoice).',
+          'Create test plan and test report for Ekosistem process (Product, Variant).',
+          'Collaborate with team members in testing manually and use Jira as management and bug reporting system.',
+          'Create test script and run automation testing with Katalon or Cypress.',
+          'Create Load test script with JMeter.',
+          'Create documentation to comply with company standard Requirement Specification, Bispro/BPMN diagram, Functional, Integration and User Acceptance Testing.'
+        ],
+        tech: ['JIRA', 'Katalon', 'Cypress', 'JMeter', 'Postman', 'UAT']
+      },
+      klinik: {
+        status: 'Completed',
+        title: 'Clinic Administrator',
+        subtitle: 'Klinik Mustopa',
+        meta: 'Klinik Mustopa • Sep 2019 — Des 2019',
+        description: 'Mengelola admin klinik dan memastikan proses pendaftaran pasien, pencatatan data, serta pengelolaan stok obat berjalan dengan baik untuk mendukung pelayanan medis.',
+        tags: ['Patient Registration', 'Data Entry', 'Inventory', 'Clinic Administration'],
+        bullets: [
+          'Managed patient registration processes.',
+          'Performed data entry tasks, including maintaining detailed and up-to-date patient records using clinic management systems.',
+          'Oversaw medication stock inventory, regularly monitoring supply levels, placing orders, and verifying deliveries to ensure availability of essential medicines.'
+        ],
+        tech: ['Patient Data', 'Inventory', 'Clinic Admin', 'Documentation']
+      }
+    };
+
+    const expStatus = document.querySelector('.exp-status-pill');
+    const expRoleTitle = document.querySelector('.exp-role-title');
+    const expRoleSub = document.querySelector('.exp-role-sub');
+    const expMeta = document.querySelector('.exp-meta');
+    const expDescription = document.querySelector('.exp-description');
+    const expTags = document.querySelector('.exp-tags');
+    const expBullets = document.querySelector('.exp-bullets');
+    const expTechGrid = document.querySelector('.exp-tech-grid');
+    const timelineItems = document.querySelectorAll('.timeline-item');
+
+    function renderExperience(jobKey) {
+      const experience = expJobs[jobKey];
+      if (!experience) return;
+      expStatus.textContent = experience.status;
+      expRoleTitle.textContent = experience.title;
+      expRoleSub.textContent = experience.subtitle;
+      expMeta.textContent = experience.meta;
+      expDescription.textContent = experience.description;
+
+      expTags.innerHTML = experience.tags.map(tag => `<span class="exp-tag">${tag}</span>`).join('');
+      expBullets.innerHTML = experience.bullets.map(item => `<li>${item}</li>`).join('');
+      expTechGrid.innerHTML = experience.tech.map(tool => `<div class="exp-tech-card"><i class="fa-solid fa-check"></i>${tool}</div>`).join('');
+    }
+
+    timelineItems.forEach(item => {
+      item.addEventListener('click', () => {
+        timelineItems.forEach(el => el.classList.remove('active'));
+        item.classList.add('active');
+        renderExperience(item.dataset.job);
+      });
+    });
+
+    renderExperience('digistar');
+
+    // Navbar scroll effect (already styled, just light refinement)
+    window.addEventListener('scroll', () => {
+      const nav = document.getElementById('navbar');
+      if (window.scrollY > 60) {
+        nav.style.background = 'rgba(10,28,55,0.98)';
+      } else {
+        nav.style.background = 'rgba(15,37,69,0.95)';
+      }
+    });
+  </script>
+</body>
+
+</html>

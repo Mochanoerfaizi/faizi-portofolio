@@ -1,0 +1,172 @@
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.experience-section {
+  position: relative;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+  border-bottom: 3px solid var(--text-primary);
+  padding-bottom: 12px;
+}
+
+.section-header i {
+  font-size: 24px;
+  color: var(--text-primary);
+}
+
+.section-header h2 {
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.experience-line {
+  position: absolute;
+  left: 19px;
+  top: 60px;
+  width: 2px;
+  height: calc(100% - 80px);
+  background-color: var(--gray-300);
+  border-radius: 1px;
+}
+
+.experience-list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-top: 32px;
+  position: relative;
+}
+
+.experience-item {
+  display: flex;
+  gap: 24px;
+  position: relative;
+  padding: 24px;
+  border-radius: 12px;
+  transition: background-color 0.3s ease;
+}
+
+.experience-item.highlight {
+  background-color: var(--cyan-light);
+  background-color: rgba(144, 224, 239, 0.2);
+}
+
+.experience-marker {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: var(--cyan);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: 11px;
+  font-weight: 700;
+  margin-top: 2px;
+  box-shadow: 0 0 0 8px rgba(0, 180, 216, 0.1);
+  text-align: center;
+  line-height: 1.2;
+}
+
+.experience-content {
+  flex: 1;
+  padding-top: 4px;
+}
+
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.experience-header h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 4px 0;
+}
+
+.company {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin: 0;
+  font-weight: 500;
+}
+
+.period {
+  font-size: 14px;
+  color: var(--gray-500);
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+.tasks-list {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tasks-list li {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  position: relative;
+  padding-left: 16px;
+}
+
+.tasks-list li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--cyan);
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 24px 16px;
+  }
+
+  .experience-item {
+    padding: 16px;
+  }
+
+  .experience-marker {
+    width: 44px;
+    height: 44px;
+    font-size: 10px;
+  }
+
+  .experience-header {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .period {
+    margin-top: 4px;
+  }
+
+  .experience-line {
+    left: 16px;
+  }
+
+  .section-header h2 {
+    font-size: 24px;
+  }
+}
