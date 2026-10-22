@@ -99,6 +99,38 @@
       list-style: none;
     }
 
+    .language-switch {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 4px;
+      border: 1px solid rgba(176, 189, 212, 0.28);
+      border-radius: 999px;
+    }
+
+    .language-switch button {
+      border: 0;
+      border-radius: 999px;
+      padding: 5px 9px;
+      background: transparent;
+      color: var(--gray-300);
+      font: inherit;
+      font-size: 0.75rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .language-switch button[aria-pressed="true"] {
+      background: var(--cyan);
+      color: var(--navy);
+    }
+
+    .language-switch button:focus-visible {
+      outline: 2px solid var(--white);
+      outline-offset: 2px;
+    }
+
     .nav-links a {
       font-size: 0.875rem;
       font-weight: 500;
@@ -1467,7 +1499,7 @@
     /* full-width features row under About */
     .about-features {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 1rem;
       margin: 2rem 0 0 0;
       align-items: stretch;
@@ -1525,6 +1557,21 @@
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
+    }
+
+    .skill-details {
+      display: grid;
+      gap: 0.6rem;
+      margin-top: 0.75rem;
+      padding-left: 1.1rem;
+      color: var(--text-secondary);
+      font-size: 0.88rem;
+      line-height: 1.55;
+    }
+
+    .skill-card>p {
+      color: var(--text-muted);
+      font-size: 0.88rem;
     }
 
     .tool-row {
@@ -1591,12 +1638,12 @@
     }
 
     .approach-grid {
-      display: flex;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 1rem;
     }
 
     .approach-item {
-      flex: 1;
       text-align: center;
       padding: 12px;
       border-radius: 10px;
@@ -1604,9 +1651,20 @@
       border: 1px solid var(--card-border);
     }
 
+    .approach-item>i {
+      font-size: 20px;
+      color: var(--cyan);
+    }
+
     .approach-item h4 {
       margin: 8px 0 6px;
       font-size: 0.95rem;
+    }
+
+    .approach-item p {
+      margin: 0;
+      font-size: 0.85rem;
+      color: var(--text-muted);
     }
 
     @media (max-width: 980px) {
@@ -1619,7 +1677,6 @@
       }
 
       .approach-grid {
-        flex-direction: row;
         gap: 0.75rem;
       }
     }
@@ -1891,6 +1948,10 @@
       <li><a href="#portfolio">Portfolio</a></li>
       <li><a href="#contact" class="nav-cta">Hubungi Saya</a></li>
     </ul>
+    <div class="language-switch" role="group" aria-label="Pilih bahasa">
+      <button type="button" data-language="id" aria-pressed="true">ID</button>
+      <button type="button" data-language="en" aria-pressed="false">EN</button>
+    </div>
     <div class="hamburger" id="hamburger" aria-label="Menu">
       <span></span><span></span><span></span>
     </div>
@@ -1908,9 +1969,9 @@
       </h1>
       <p class="hero-title">Quality Assurance Engineer</p>
       <p class="hero-desc">
-        Ensuring software quality through structured<br>
-        manual testing, UI testing, API testing,<br>
-        and automation testing to deliver reliable products.
+        Berpengalaman di quality assurance dan memahami proses pengembangan software. Selain itu, saya mahir menggunakan
+        Microsoft Office dan memiliki pengalaman administrasi, sehingga saya terbuka untuk berbagai peran, baik di
+        bidang teknologi maupun non-IT.
       </p>
       <div class="hero-buttons">
         <a href="#portfolio" class="btn-primary">Explore Portfolio</a>
@@ -1946,7 +2007,6 @@
         <div class="tc-line"><span class="pass">✓ Manual Testing</span></div>
         <div class="tc-line"><span class="pass">✓ Functional Testing</span></div>
         <div class="tc-line"><span class="pass">✓ Regression Testing</span></div>
-        <div class="tc-line"><span class="pass">✓ Smoke Testing</span></div>
         <div class="tc-line"><span class="pass">✓ UI Testing</span></div>
         <div class="tc-line"><span class="pass">✓ API Testing</span></div>
         <div class="tc-line"><span class="pass">✓ Automation Testing</span></div>
@@ -1965,22 +2025,31 @@
       </div>
       <div class="about-text fade-up">
         <span class="section-eyebrow">// ABOUT ME</span>
-        <h2 class="section-title">Hi, I&#8217;m Mochamad Noer<br><span class="highlight">Faizi</span> Supriatna Putra
-        </h2>
-        <p class="hero-title">Quality Assurance Engineer</p>
+        <h2 class="section-title">Hi, I&#8217;m Mochamad Noer Faizi Supriatna Putra</h2>
+        <p class="hero-title">Quality Assurance Engineer · Junior Developer · Administrative Support</p>
         <p>
           I am a detail-oriented QA Engineer with a strong passion for ensuring software quality and delivering great
-          user experiences. I have solid experience in <a href="#">Manual Testing</a>, <a href="#">UI Testing</a>, <a
-            href="#">API Testing</a>, and <a href="#">Automation Testing</a>.
+          user experiences. I have solid experience in Manual Testing, UI Testing, API Testing, and Automation Testing.
         </p>
         <p>
           I believe quality is not just about finding bugs, but about building confidence in every release. I enjoy
-          working in collaborative teams, creating effective test strategies, and continuously learning new technologies
-          to improve testing efficiency and product reliability.
+          working in collaborative teams, creating effective test strategies, and continuously learning new
+          technologies.
         </p>
         <p>
-          I&#8217;m always eager to take on new challenges and contribute to building innovative, user-focused digital
-          products.
+          Starting from QA, I am used to looking at a product from the user&#8217;s perspective while also understanding
+          how it is built. I have built web applications with Laravel and Vue.js, an Android application with Kotlin,
+          and an AI-based tool with Python.
+        </p>
+        <p>
+          Beyond IT, I am comfortable using Microsoft Office (Word, Excel, PowerPoint) to create documents, process
+          data,
+          prepare reports, and deliver presentations. My experience as a Clinic Administrator trained me in data
+          recording, customer service, and administrative discipline. This combination makes me ready to work across
+          different fields, not only in the technology industry.
+        </p>
+        <p>
+          I am always eager to take on new challenges and contribute to building user-focused digital products.
         </p>
 
       </div>
@@ -1990,22 +2059,32 @@
       <div class="highlight-card">
         <div class="highlight-icon"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></div>
         <h4>Detail-Oriented</h4>
-        <p>I pay close attention to details to ensure every feature works as expected.</p>
+        <p>I pay close attention to details so every feature and document works as expected.</p>
       </div>
       <div class="highlight-card">
         <div class="highlight-icon"><i class="fa-solid fa-bullseye" aria-hidden="true"></i></div>
         <h4>Quality Focused</h4>
-        <p>I focus on delivering high-quality software through structured testing and validation.</p>
-      </div>
-      <div class="highlight-card">
-        <div class="highlight-icon"><i class="fa-solid fa-robot" aria-hidden="true"></i></div>
-        <h4>Automation Enthusiast</h4>
-        <p>I enjoy building automation solutions to increase efficiency and reduce repetitive tasks.</p>
+        <p>I deliver high-quality results through structured processes.</p>
       </div>
       <div class="highlight-card">
         <div class="highlight-icon"><i class="fa-solid fa-users" aria-hidden="true"></i></div>
         <h4>Team Player</h4>
         <p>I value collaboration and communication to achieve the best results together.</p>
+      </div>
+      <div class="highlight-card">
+        <div class="highlight-icon"><i class="fa-solid fa-clock" aria-hidden="true"></i></div>
+        <h4>Time Management</h4>
+        <p>I am used to setting priorities and meeting deadlines without sacrificing quality.</p>
+      </div>
+      <div class="highlight-card">
+        <div class="highlight-icon"><i class="fa-solid fa-lightbulb" aria-hidden="true"></i></div>
+        <h4>Creative</h4>
+        <p>I enjoy finding new ideas and approaches to solve problems and improve efficiency.</p>
+      </div>
+      <div class="highlight-card">
+        <div class="highlight-icon"><i class="fa-solid fa-robot" aria-hidden="true"></i></div>
+        <h4>Automation Enthusiast</h4>
+        <p>I enjoy building automation solutions to reduce repetitive work.</p>
       </div>
     </div>
   </section>
@@ -2015,8 +2094,8 @@
     <div class="section-header fade-up">
       <span class="section-eyebrow">// skills &amp; tools</span>
       <h2 class="section-title">Skills &amp; Technologies</h2>
-      <p class="section-subtitle">The tools, technologies, and methodologies I use to ensure
-        High-Quality Software and Deliver reliable user experiences.</p>
+      <p class="section-subtitle">The tools, technologies, and methodologies I use to deliver high-quality work and
+        reliable user experiences.</p>
     </div>
 
     <div class="skills-grid">
@@ -2030,7 +2109,7 @@
           <span class="skill-pill">Regression Testing</span>
           <span class="skill-pill">Smoke Testing</span>
           <span class="skill-pill">Mobile Testing</span>
-          <span class="skill-pill">UAT (User Acceptance)</span>
+          <span class="skill-pill">UAT (User Acceptance Testing)</span>
         </div>
       </div>
 
@@ -2046,16 +2125,16 @@
         <div class="tool-row">
           <div class="tool-name">JMeter</div>
           <div class="progress">
-            <div class="progress-fill" style="width:70%"></div>
+            <div class="progress-fill" style="width:50%"></div>
           </div>
-          <div class="tool-pct">70%</div>
+          <div class="tool-pct">50%</div>
         </div>
         <div class="tool-row">
           <div class="tool-name">Katalon</div>
           <div class="progress">
-            <div class="progress-fill" style="width:65%"></div>
+            <div class="progress-fill" style="width:50%"></div>
           </div>
-          <div class="tool-pct">65%</div>
+          <div class="tool-pct">50%</div>
         </div>
         <div class="tool-row">
           <div class="tool-name">Cypress</div>
@@ -2084,11 +2163,53 @@
         <h3><i class="fa-solid fa-diagram-project" aria-hidden="true"></i> Test Management &amp; Processes</h3>
         <div class="skill-pills">
           <span class="skill-pill">Test Case Management</span>
-          <span class="skill-pill">Test Report</span>
+          <span class="skill-pill">Test Reporting</span>
           <span class="skill-pill">BA &amp; Go Live</span>
           <span class="skill-pill">Test Case Documentation</span>
           <span class="skill-pill">Bug Reporting</span>
         </div>
+      </div>
+
+      <div class="skill-card">
+        <h3><i class="fa-solid fa-code" aria-hidden="true"></i> Development</h3>
+        <div class="skill-pills">
+          <span class="skill-pill">Laravel</span>
+          <span class="skill-pill">PHP</span>
+          <span class="skill-pill">MySQL</span>
+          <span class="skill-pill">Tailwind CSS</span>
+          <span class="skill-pill">HTML</span>
+          <span class="skill-pill">Kotlin (Android)</span>
+          <span class="skill-pill">GIT</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <h3><i class="fa-solid fa-briefcase" aria-hidden="true"></i> Office &amp; Administration</h3>
+        <p>Supporting skills for office and operational work.</p>
+        <ul class="skill-details">
+          <li><strong>Microsoft Word</strong> — documents, reports, and letters</li>
+          <li><strong>Microsoft Excel</strong> — data processing, basic formulas, tables, and report summaries</li>
+          <li><strong>Microsoft PowerPoint</strong> — presentation materials</li>
+          <li><strong>Documentation &amp; reporting</strong> — test reports, SOPs, and work reports</li>
+          <li><strong>Administration &amp; data recording</strong></li>
+          <li><strong>Communication &amp; customer service</strong></li>
+          <li><strong>Canva</strong></li>
+
+        </ul>
+      </div>
+
+      <div class="skill-card">
+        <h3><i class="fa-solid fa-people-group" aria-hidden="true"></i> Soft Skills</h3>
+        <ul class="skill-details">
+          <li><strong>Teamwork</strong> — Working across teams (developers, product, and stakeholders) with clear and
+            open communication.</li>
+          <li><strong>Time Management</strong> — Setting priorities, planning schedules, and delivering work on time.
+          </li>
+          <li><strong>Creative</strong> — Thinking creatively when designing test scenarios, solving problems, and
+            finding more efficient ways of working.</li>
+          <li><strong>Problem Solving</strong> — Analyzing problems systematically down to their root cause.</li>
+          <li><strong>Adaptability</strong> — Learning quickly and adapting to new tools, teams, and fields.</li>
+        </ul>
       </div>
     </div>
 
@@ -2097,7 +2218,7 @@
         <div class="ai-box">AI</div>
         <div>
           <h3>AI &amp; Supporting Technologies</h3>
-          <p>Leveraging AI to improve efficiency and effectiveness in testing and documentation.</p>
+          <p>Leveraging AI to improve the efficiency and effectiveness of testing and documentation.</p>
           <div style="margin-top:12px" class="skill-pills">
             <span class="skill-pill">AI Test Case Generation</span>
             <span class="skill-pill">Test Data Generation</span>
@@ -2110,25 +2231,35 @@
       <div class="skill-card">
         <h3><i class="fa-regular fa-lightbulb"></i> My Approach</h3>
         <div class="approach-grid">
-          <div class="approach-item"><i class="fa-solid fa-eye" style="font-size:20px;color:var(--cyan)"></i>
+          <div class="approach-item">
+            <i class="fa-solid fa-eye" aria-hidden="true"></i>
             <h4>Detail-Oriented</h4>
-            <p style="font-size:0.85rem;color:var(--text-muted)">I pay close attention to details to ensure the quality
-              of every feature.</p>
+            <p>Paying attention to detail to maintain the quality of every feature.</p>
           </div>
-          <div class="approach-item"><i class="fa-solid fa-bullseye" style="font-size:20px;color:var(--cyan)"></i>
+          <div class="approach-item">
+            <i class="fa-solid fa-bullseye" aria-hidden="true"></i>
             <h4>Quality Focused</h4>
-            <p style="font-size:0.85rem;color:var(--text-muted)">Committed to delivering high-quality software through
-              structured testing processes.</p>
+            <p>Committed to quality results through a structured process.</p>
           </div>
-          <div class="approach-item"><i class="fa-solid fa-robot" style="font-size:20px;color:var(--cyan)"></i>
+          <div class="approach-item">
+            <i class="fa-solid fa-robot" aria-hidden="true"></i>
             <h4>Automation Mindset</h4>
-            <p style="font-size:0.85rem;color:var(--text-muted)">Always looking for ways to automate and improve testing
-              efficiency.</p>
+            <p>Always looking for ways to automate and improve efficiency.</p>
           </div>
-          <div class="approach-item"><i class="fa-solid fa-users" style="font-size:20px;color:var(--cyan)"></i>
+          <div class="approach-item">
+            <i class="fa-solid fa-users" aria-hidden="true"></i>
             <h4>Collaborative</h4>
-            <p style="font-size:0.85rem;color:var(--text-muted)">Working together with teams to achieve the best
-              results.</p>
+            <p>Working with the team to achieve the best results.</p>
+          </div>
+          <div class="approach-item">
+            <i class="fa-solid fa-list-check" aria-hidden="true"></i>
+            <h4>Organized</h4>
+            <p>Managing time and priorities so work is finished on schedule.</p>
+          </div>
+          <div class="approach-item">
+            <i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
+            <h4>Creative</h4>
+            <p>Open to new ideas and different approaches.</p>
           </div>
         </div>
       </div>
@@ -2144,7 +2275,7 @@
 
     <div class="exp-summary-grid fade-up">
       <div class="exp-summary-card">
-        <strong>1+</strong>
+        <strong>4+</strong>
         <p>Tahun pengalaman dalam quality assurance, pengujian manual, dan otomatisasi.</p>
       </div>
       <div class="exp-summary-card">
@@ -2152,7 +2283,7 @@
         <p>Proyek QA yang telah dikerjakan meliputi web, mobile, dan API testing.</p>
       </div>
       <div class="exp-summary-card">
-        <strong>200+</strong>
+        <strong>50+</strong>
         <p>Test case dummy terstruktur, mencakup regresi, fungsional, dan integrasi.</p>
       </div>
     </div>
@@ -2198,8 +2329,7 @@
             </div>
           </div>
 
-          <p class="exp-description">Bertanggung jawab memastikan kualitas produk digital melalui pengujian manual dan
-            otomatis, serta kolaborasi lintas tim untuk memastikan pengiriman fitur yang andal dan stabil.</p>
+          <p class="exp-description">.</p>
 
           <div class="exp-tags"></div>
 
@@ -2307,29 +2437,73 @@
       <div class="cert-card fade-up">
         <div class="cert-icon"><i class="fa-solid fa-certificate" aria-hidden="true"></i></div>
         <div class="cert-info">
-          <h4>ISTQB Certified Tester Foundation</h4>
-          <p>International Software Testing Qualifications Board</p>
-        </div>
-      </div>
-      <div class="cert-card fade-up">
-        <div class="cert-icon"><i class="fa-brands fa-google" aria-hidden="true"></i></div>
-        <div class="cert-info">
-          <h4>Automation API testing</h4>
-          <p>Jago QA Co · 2024</p>
-        </div>
-      </div>
-      <div class="cert-card fade-up">
-        <div class="cert-icon"><i class="fa-solid fa-network-wired" aria-hidden="true"></i></div>
-        <div class="cert-info">
-          <h4>Automation UI testing</h4>
-          <p>Postman · Student Expert Program</p>
-        </div>
-      </div>
-      <div class="cert-card fade-up">
-        <div class="cert-icon"><i class="fa-solid fa-diagram-project" aria-hidden="true"></i></div>
-        <div class="cert-info">
           <h4>Belajar Dasar AI</h4>
-          <p>Dicoding Indonesia · 2026</p>
+          <p>Dicoding · Februari 2026</p>
+        </div>
+      </div>
+      <div class="cert-card fade-up">
+        <div class="cert-icon"><i class="fa-solid fa-certificate" aria-hidden="true"></i></div>
+        <div class="cert-info">
+          <h4>Program Undang-Undang Perlindungan Data Pribadi</h4>
+          <p>Telkom Corporate University · September 2025</p>
+        </div>
+      </div>
+      <div class="cert-card fade-up">
+        <div class="cert-icon"><i class="fa-solid fa-certificate" aria-hidden="true"></i></div>
+        <div class="cert-info">
+          <h4>Preparation Course for Azure AI Fundamentals (AI-900)</h4>
+          <p>Microsoft · September 2025</p>
+        </div>
+      </div>
+      <div class="cert-card fade-up">
+        <div class="cert-icon"><i class="fa-solid fa-certificate" aria-hidden="true"></i></div>
+        <div class="cert-info">
+          <h4>Dasar-Dasar Implementasi Kecerdasan Artifisial Micro Skill Digital Talent Scholarship 2025</h4>
+          <p>KOMDIGI · Mei 2025</p>
+        </div>
+      </div>
+      <div class="cert-card fade-up">
+        <div class="cert-icon"><i class="fa-solid fa-certificate" aria-hidden="true"></i></div>
+        <div class="cert-info">
+          <h4>Junior Mobile Programmer Vocational School Graduate Academy Digital Talent Scholarship 2025</h4>
+          <p>KOMDIGI · Juni 2025</p>
+        </div>
+      </div>
+      <div class="cert-card fade-up">
+        <div class="cert-icon"><i class="fa-solid fa-certificate" aria-hidden="true"></i></div>
+        <div class="cert-info">
+          <h4>Konsep Pemrograman Micro Skill Digital Talent Scholarship 2025</h4>
+          <p>KOMDIGI · Juni 2025</p>
+        </div>
+      </div>
+      <div class="cert-card fade-up">
+        <div class="cert-icon"><i class="fa-solid fa-certificate" aria-hidden="true"></i></div>
+        <div class="cert-info">
+          <h4>Linear Models in Machine Learning: Fundamentals Fresh Graduate Academy Digital Talent Scholarship 2025
+          </h4>
+          <p>KOMDIGI · Mei 2025</p>
+        </div>
+      </div>
+      <div class="cert-card fade-up">
+        <div class="cert-icon"><i class="fa-solid fa-certificate" aria-hidden="true"></i></div>
+        <div class="cert-info">
+          <h4>Pengantar Mindset Digital 1: Mengubah Masa Depan Anda Dengan Pola Pikir Digital Micro Skill Digital Talent
+            Scholarship 2025</h4>
+          <p>KOMDIGI · Juni 2025</p>
+        </div>
+      </div>
+      <div class="cert-card fade-up">
+        <div class="cert-icon"><i class="fa-solid fa-certificate" aria-hidden="true"></i></div>
+        <div class="cert-info">
+          <h4>Cypress End to End API Testing</h4>
+          <p>Jago QA · Januari 2024</p>
+        </div>
+      </div>
+      <div class="cert-card fade-up">
+        <div class="cert-icon"><i class="fa-solid fa-certificate" aria-hidden="true"></i></div>
+        <div class="cert-info">
+          <h4>Cypress End to End UI Testing</h4>
+          <p>Jago QA · Januari 2024</p>
         </div>
       </div>
     </div>
@@ -2376,9 +2550,10 @@
             <p class="cv-label">Download CV</p>
             <h3 class="cv-title">Lihat ringkasan pengalaman saya selama bekerja</h3>
           </div>
-          <a href="https://example.com/cv.pdf" class="btn-cv" target="_blank" rel="noopener noreferrer">
-            <span>Lihat CV Saya</span>
-            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          <a href="./CV_Mochamad_Noer_Faizi_Supriatna_Putra.pdf" class="btn-cv"
+            download="CV_Mochamad_Noer_Faizi_Supriatna_Putra.pdf">
+            <span>Unduh CV Saya</span>
+            <i class="fa-solid fa-download" aria-hidden="true"></i>
           </a>
         </div>
         <div class="social-links">
@@ -2415,7 +2590,7 @@
           <div class="contact-chip">
             <div class="contact-chip-icon"><i class="fa-brands fa-instagram"></i></div>
             <p class="contact-chip-title">Instagram</p>
-            <p class="contact-chip-text">@mochanoerfaizisp</p>
+            <p class="contact-chip-text">@mochanoerfaizi</p>
           </div>
           <div class="contact-chip">
             <div class="contact-chip-icon"><i class="fa-brands fa-whatsapp"></i></div>
@@ -2429,22 +2604,24 @@
           <div class="interest-card">
             <div class="interest-icon"><i class="fa-solid fa-rocket"></i></div>
             <h4>Kolaborasi Proyek</h4>
-            <p>Bekerja sama dalam proyek QA, automation, atau quality improvement.</p>
+            <p>Bekerja sama dalam proyek QA, pengembangan aplikasi, automation, atau peningkatan kualitas produk.</p>
           </div>
           <div class="interest-card">
             <div class="interest-icon"><i class="fa-solid fa-briefcase"></i></div>
             <h4>Peluang Karier</h4>
-            <p>Tertarik dengan peluang karier di bidang Quality Assurance.</p>
+            <p>Terbuka untuk posisi QA, automation, web/mobile development, administrasi, maupun peran profesional
+              lainnya.</p>
           </div>
           <div class="interest-card">
             <div class="interest-icon"><i class="fa-solid fa-comments"></i></div>
             <h4>Diskusi & Sharing</h4>
-            <p>Berdiskusi tentang testing, tools, strategi QA, dan best practices.</p>
+            <p>Berdiskusi tentang teknologi, testing, tools, strategi kerja, dan best practices.</p>
           </div>
           <div class="interest-card vip">
             <div class="interest-icon"><i class="fa-solid fa-handshake"></i></div>
             <h4>Freelance / Part-time</h4>
-            <p>Terbuka untuk pekerjaan freelance atau part-time QA Engineer, maupun pekerjaan lainnya.</p>
+            <p>Terbuka untuk pekerjaan freelance atau part-time di bidang QA, development, administrasi, maupun peran
+              lainnya.</p>
           </div>
         </div>
       </div>
@@ -2458,6 +2635,222 @@
   </footer>
 
   <script>
+    const languagePairs = [
+      ["About", "Tentang"],
+      ["Skills", "Keahlian"],
+      ["Experience", "Pengalaman"],
+      ["Portfolio", "Portofolio"],
+      ["ABOUT ME", "TENTANG SAYA"],
+      ["// ABOUT ME", "// TENTANG SAYA"],
+      ["// skills & tools", "// keahlian & tools"],
+      ["// work_experience", "// pengalaman_kerja"],
+      ["// portfolio", "// portofolio"],
+      ["// certifications", "// sertifikasi"],
+      ["// get_in_touch", "// hubungi_saya"],
+      ["Choose language", "Pilih bahasa"],
+      ["🟢 Available for Work", "🟢 Tersedia untuk Bekerja"],
+      ["Explore Portfolio", "Jelajahi Portofolio"],
+      ["Contact Me", "Hubungi Saya"],
+      ["Experienced in quality assurance with an understanding of software development processes. In addition, I am proficient in Microsoft Office and have administrative experience, so I am open to a variety of roles in both technology and non-IT fields.", "Berpengalaman di quality assurance dan memahami proses pengembangan software. Selain itu, saya mahir menggunakan Microsoft Office dan memiliki pengalaman administrasi, sehingga saya terbuka untuk berbagai peran, baik di bidang teknologi maupun non-IT."],
+      ["Testing Profile", "Profil Pengujian"],
+      ["QA Skills", "Keahlian QA"],
+      ["Hi, I’m Mochamad Noer Faizi Supriatna Putra", "Hai, saya Mochamad Noer Faizi Supriatna Putra"],
+      ["Quality Assurance Engineer · Junior Developer · Administrative Support", "Quality Assurance Engineer · Junior Developer · Dukungan Administrasi"],
+      ["I am a detail-oriented QA Engineer with a strong passion for ensuring software quality and delivering great user experiences. I have solid experience in Manual Testing, UI Testing, API Testing, and Automation Testing.", "Saya adalah QA Engineer yang teliti dan sangat bersemangat memastikan kualitas perangkat lunak serta menghadirkan pengalaman pengguna yang baik. Saya memiliki pengalaman solid dalam Manual Testing, UI Testing, API Testing, dan Automation Testing."],
+      ["I believe quality is not just about finding bugs, but about building confidence in every release. I enjoy working in collaborative teams, creating effective test strategies, and continuously learning new technologies.", "Saya percaya kualitas bukan hanya soal menemukan bug, tetapi juga membangun kepercayaan pada setiap rilis. Saya senang bekerja dalam tim yang kolaboratif, menyusun strategi pengujian yang efektif, dan terus mempelajari teknologi baru."],
+      ["Starting from QA, I am used to looking at a product from the user’s perspective while also understanding how it is built. I have built web applications with Laravel and Vue.js, an Android application with Kotlin, and an AI-based tool with Python.", "Berawal dari QA, saya terbiasa melihat produk dari sudut pandang pengguna sekaligus memahami cara produk tersebut dibangun. Saya pernah membangun aplikasi web dengan Laravel dan Vue.js, aplikasi Android dengan Kotlin, serta tools berbasis AI dengan Python."],
+      ["Beyond IT, I am comfortable using Microsoft Office (Word, Excel, PowerPoint) to create documents, process data, prepare reports, and deliver presentations. My experience as a Clinic Administrator trained me in data recording, customer service, and administrative discipline. This combination makes me ready to work across different fields, not only in the technology industry.", "Di luar bidang IT, saya terbiasa menggunakan Microsoft Office (Word, Excel, PowerPoint) untuk membuat dokumen, mengolah data, menyusun laporan, dan menyiapkan presentasi. Pengalaman sebagai Clinic Administrator melatih saya dalam pencatatan data, pelayanan pelanggan, dan kedisiplinan administrasi. Perpaduan ini membuat saya siap bekerja di berbagai bidang, tidak hanya di industri teknologi."],
+      ["I am always eager to take on new challenges and contribute to building user-focused digital products.", "Saya selalu bersemangat menghadapi tantangan baru dan berkontribusi membangun produk digital yang berpusat pada pengguna."],
+      ["Detail-Oriented", "Teliti"],
+      ["I pay close attention to details so every feature and document works as expected.", "Saya memperhatikan detail agar setiap fitur dan dokumen berfungsi sesuai harapan."],
+      ["Quality Focused", "Berfokus pada Kualitas"],
+      ["I deliver high-quality results through structured processes.", "Saya menghasilkan pekerjaan berkualitas tinggi melalui proses yang terstruktur."],
+      ["Team Player", "Kolaboratif"],
+      ["I value collaboration and communication to achieve the best results together.", "Saya menghargai kolaborasi dan komunikasi untuk mencapai hasil terbaik bersama."],
+      ["Time Management", "Manajemen Waktu"],
+      ["I am used to setting priorities and meeting deadlines without sacrificing quality.", "Saya terbiasa menentukan prioritas dan memenuhi tenggat waktu tanpa mengorbankan kualitas."],
+      ["Creative", "Kreatif"],
+      ["I enjoy finding new ideas and approaches to solve problems and improve efficiency.", "Saya senang menemukan ide dan pendekatan baru untuk menyelesaikan masalah serta meningkatkan efisiensi."],
+      ["Automation Enthusiast", "Antusias Otomatisasi"],
+      ["I enjoy building automation solutions to reduce repetitive work.", "Saya senang membangun solusi otomatisasi untuk mengurangi pekerjaan berulang."],
+      ["Skills & Technologies", "Keahlian & Teknologi"],
+      ["The tools, technologies, and methodologies I use to deliver high-quality work and reliable user experiences.", "Tools, teknologi, dan metodologi yang saya gunakan untuk menghasilkan pekerjaan berkualitas serta pengalaman pengguna yang andal."],
+      ["Testing Types", "Jenis Pengujian"],
+      ["Tools & Automation", "Tools & Otomatisasi"],
+      ["Test Management & Processes", "Manajemen & Proses Pengujian"],
+      ["Development", "Pengembangan"],
+      ["Office & Administration", "Perkantoran & Administrasi"],
+      ["Supporting skills for office and operational work.", "Keahlian pendukung untuk pekerjaan perkantoran dan operasional."],
+      ["documents, reports, and letters", "dokumen, laporan, dan surat"],
+      ["— documents, reports, and letters", "— dokumen, laporan, dan surat"],
+      ["data processing, basic formulas, tables, and report summaries", "pengolahan data, rumus dasar, tabel, dan ringkasan laporan"],
+      ["— data processing, basic formulas, tables, and report summaries", "— pengolahan data, rumus dasar, tabel, dan ringkasan laporan"],
+      ["presentation materials", "materi presentasi"],
+      ["— presentation materials", "— materi presentasi"],
+      ["test reports, SOPs, and work reports", "laporan pengujian, SOP, dan laporan kerja"],
+      ["— test reports, SOPs, and work reports", "— laporan pengujian, SOP, dan laporan kerja"],
+      ["— Working across teams (developers, product, and stakeholders) with clear and open communication.", "— Bekerja lintas tim (developer, produk, dan pemangku kepentingan) dengan komunikasi yang jelas dan terbuka."],
+      ["— Setting priorities, planning schedules, and delivering work on time.", "— Menentukan prioritas, merencanakan jadwal, dan menyelesaikan pekerjaan tepat waktu."],
+      ["— Thinking creatively when designing test scenarios, solving problems, and finding more efficient ways of working.", "— Berpikir kreatif saat merancang skenario pengujian, menyelesaikan masalah, dan menemukan cara kerja yang lebih efisien."],
+      ["— Analyzing problems systematically down to their root cause.", "— Menganalisis masalah secara sistematis hingga menemukan akar penyebabnya."],
+      ["— Learning quickly and adapting to new tools, teams, and fields.", "— Belajar dengan cepat dan beradaptasi dengan tools, tim, serta bidang baru."],
+      ["Administration & data recording", "Administrasi & pencatatan data"],
+      ["Communication & customer service", "Komunikasi & pelayanan pelanggan"],
+      ["Soft Skills", "Keterampilan Interpersonal"],
+      ["Working across teams (developers, product, and stakeholders) with clear and open communication.", "Bekerja lintas tim (developer, produk, dan pemangku kepentingan) dengan komunikasi yang jelas dan terbuka."],
+      ["Setting priorities, planning schedules, and delivering work on time.", "Menentukan prioritas, merencanakan jadwal, dan menyelesaikan pekerjaan tepat waktu."],
+      ["Thinking creatively when designing test scenarios, solving problems, and finding more efficient ways of working.", "Berpikir kreatif saat merancang skenario pengujian, menyelesaikan masalah, dan menemukan cara kerja yang lebih efisien."],
+      ["Analyzing problems systematically down to their root cause.", "Menganalisis masalah secara sistematis hingga menemukan akar penyebabnya."],
+      ["Learning quickly and adapting to new tools, teams, and fields.", "Belajar dengan cepat dan beradaptasi dengan tools, tim, serta bidang baru."],
+      ["AI & Supporting Technologies", "AI & Teknologi Pendukung"],
+      ["Leveraging AI to improve the efficiency and effectiveness of testing and documentation.", "Memanfaatkan AI untuk meningkatkan efisiensi dan efektivitas pengujian serta dokumentasi."],
+      ["My Approach", "Pendekatan Saya"],
+      ["Paying attention to detail to maintain the quality of every feature.", "Memperhatikan detail untuk menjaga kualitas setiap fitur."],
+      ["Committed to quality results through a structured process.", "Berkomitmen menghasilkan pekerjaan berkualitas melalui proses yang terstruktur."],
+      ["Automation Mindset", "Pola Pikir Otomatisasi"],
+      ["Always looking for ways to automate and improve efficiency.", "Selalu mencari cara untuk melakukan otomatisasi dan meningkatkan efisiensi."],
+      ["Collaborative", "Kolaboratif"],
+      ["Working with the team to achieve the best results.", "Bekerja bersama tim untuk mencapai hasil terbaik."],
+      ["Organized", "Terorganisasi"],
+      ["Managing time and priorities so work is finished on schedule.", "Mengelola waktu dan prioritas agar pekerjaan selesai sesuai jadwal."],
+      ["Open to new ideas and different approaches.", "Terbuka pada ide baru dan beragam pendekatan."],
+      ["Work Experience", "Pengalaman Kerja"],
+      ["Years of experience in quality assurance, manual testing, and automation.", "Tahun pengalaman dalam quality assurance, pengujian manual, dan otomatisasi."],
+      ["QA projects delivered across web, mobile, and API testing.", "Proyek QA yang telah dikerjakan meliputi web, mobile, dan API testing."],
+      ["Structured test cases covering regression, functional, and integration testing.", "Test case dummy terstruktur, mencakup regresi, fungsional, dan integrasi."],
+      ["Digistar Internship", "Magang Digistar"],
+      ["Project Based Mediatron", "Proyek Berbasis Mediatron"],
+      ["Jan 2026 — Dec 2026", "Jan 2026 — Des 2026"],
+      ["Mar 2022 — Dec 2025", "Mar 2022 — Des 2025"],
+      ["Sep 2019 — Dec 2019", "Sep 2019 — Des 2019"],
+      ["Active", "Aktif"],
+      ["Completed", "Selesai"],
+      ["Key Responsibilities", "Tanggung Jawab Utama"],
+      ["Technologies & Tools Used", "Teknologi & Alat yang Digunakan"],
+      ["Projects & Portfolio", "Proyek & Portfolio"],
+      ["Selected QA projects that showcase my approach and expertise in software testing.", "Beberapa proyek QA yang mencerminkan pendekatan dan keahlian saya dalam pengujian software."],
+      ["Futsal Court Rental Application", "Aplikasi Penyewaan Lapangan Futsal"],
+      ["This application was built as a university capstone project to make futsal court rentals easier online. It uses Laravel and PHP and includes scheduling, reservations, and customer management.", "Aplikasi ini dibuat sebagai tugas besar kampus untuk memudahkan penyewaan lapangan futsal secara online. Dibangun menggunakan Laravel dan PHP dengan fitur jadwal, reservasi, dan manajemen pelanggan."],
+      ["Trustmeet Online Learning", "Trustmeet Online Learning"],
+      ["This online learning application was built as a university capstone project and features classes, learning materials, and an exam system. Its backend uses Laravel and PHP, with a responsive interface for students and instructors.", "Aplikasi online learning ini dibuat untuk tugas besar kampus, menampilkan kelas, materi, dan sistem ujian. Backend menggunakan Laravel dan PHP, dengan antarmuka yang responsif untuk siswa dan instruktur."],
+      ["Dapur Abah Lennon — Android Catering App", "Dapur Abah Lennon — Catering Android"],
+      ["An Android catering service application built as a university capstone project using Kotlin. It provides menus, ordering, and order tracking for customers.", "Aplikasi Android untuk layanan catering makanan, dibuat sebagai tugas besar kampus menggunakan Kotlin. Menyediakan menu, pemesanan, dan fitur pelacakan pesanan untuk pelanggan."],
+      ["An AI-powered test case generation application integrated with the TAIGA project management platform. Built as a final project using GPT-5 to generate test cases automatically.", "Implementasi aplikasi pembuatan test case menggunakan AI, terhubung dengan project management TAIGA. Dibangun untuk Tugas Akhir dengan GPT-5 sebagai engine pembuatan kasus uji otomatis."],
+      ["Repository", "Repository"],
+      ["Details", "Detail"],
+      ["Certifications", "Sertifikasi"],
+      ["Personal Data Protection Law Program", "Program Undang-Undang Perlindungan Data Pribadi"],
+      ["February", "Februari"],
+      ["September", "September"],
+      ["May", "Mei"],
+      ["June", "Juni"],
+      ["January", "Januari"],
+      ["Get in Touch", "Mari Terhubung"],
+      ["Have an interesting project or want to talk about QA? I am open to collaboration and new opportunities.", "Punya proyek menarik atau ingin berdiskusi soal QA? Saya terbuka untuk kolaborasi dan peluang baru."],
+      ["Location", "Lokasi"],
+      ["Bandung, West Java • Indonesia", "Indonesia • Bandung, Jawa Barat"],
+      ["Copy", "Salin"],
+      ["Status", "Status"],
+      ["Download CV", "Unduh CV"],
+      ["View a summary of my professional experience", "Lihat ringkasan pengalaman saya selama bekerja"],
+      ["Download My CV", "Unduh CV Saya"],
+      ["Let’s Connect!", "Mari Terhubung!"],
+      ["I will respond as soon as possible. Contact me through any of the platforms below or choose the discussion area that suits you best.", "Saya akan merespons secepat mungkin. Silakan hubungi saya melalui platform berikut atau pilih area diskusi yang paling sesuai."],
+      ["Connect with me", "Terhubung di"],
+      ["I’m Interested In", "Saya tertarik pada"],
+      ["Project Collaboration", "Kolaborasi Proyek"],
+      ["Collaborating on QA projects, application development, automation, or product quality improvement.", "Bekerja sama dalam proyek QA, pengembangan aplikasi, automation, atau peningkatan kualitas produk."],
+      ["Career Opportunities", "Peluang Karier"],
+      ["Open to QA, automation, web/mobile development, administration, and other professional roles.", "Terbuka untuk posisi QA, automation, web/mobile development, administrasi, maupun peran profesional lainnya."],
+      ["Discussion & Knowledge Sharing", "Diskusi & Sharing"],
+      ["Discussing technology, testing, tools, work strategies, and best practices.", "Berdiskusi tentang teknologi, testing, tools, strategi kerja, dan best practices."],
+      ["Open to freelance or part-time work in QA, development, administration, and other fields.", "Terbuka untuk pekerjaan freelance atau part-time di bidang QA, development, administrasi, maupun peran lainnya."],
+      ["Made with", "Dibuat dengan"],
+      ["by", "oleh"],
+      ["Open to opportunities", "Tersedia untuk peluang baru"],
+      ["QA Engineer", "QA Engineer"],
+      ["Internship", "Magang"],
+      ["Project Based", "Berbasis Proyek"],
+      ["Software Quality Assurance", "Quality Assurance Perangkat Lunak"],
+      ["Digistar Internship · TKP Infomedio Solution Humanika", "Magang Digistar · TKP Infomedio Solution Humanika"],
+      ["PT Telkom Indonesia • Jan 2026 — Dec 2026", "PT Telkom Indonesia • Jan 2026 — Des 2026"],
+      ["Dicoding · February 2026", "Dicoding · Februari 2026"],
+      ["Telkom Corporate University · September 2025", "Telkom Corporate University · September 2025"],
+      ["Microsoft · September 2025", "Microsoft · September 2025"],
+      ["KOMDIGI · May 2025", "KOMDIGI · Mei 2025"],
+      ["KOMDIGI · June 2025", "KOMDIGI · Juni 2025"],
+      ["Jago QA · January 2024", "Jago QA · Januari 2024"],
+      ["Test applications and validate features to ensure digital product quality, performance, and alignment with business needs and development standards.", "Melakukan pengujian aplikasi dan validasi fitur untuk memastikan kualitas produk digital, performa, serta kesesuaian dengan kebutuhan bisnis dan standar pengembangan."],
+      ["Key responsibilities", "Tanggung jawab utama"],
+      ["FAB Digital · Mediatron Project", "FAB Digital · Project Based Mediatron"],
+      ["PT Telkom Indonesia • Mar 2022 — Dec 2025", "PT Telkom Indonesia • Mar 2022 — Des 2025"],
+      ["Managed quality assurance for FAB Digital products, including FABD and MYTENS, focusing on functional testing, business process validation, and quality documentation in line with company standards.", "Menangani quality assurance untuk produk digital FAB Digital, termasuk produk FABD dan MYTENS, dengan fokus pada pengujian fungsi, validasi proses bisnis, serta dokumentasi kualitas sesuai standar perusahaan."],
+      ["Klinik Mustopa • Sep 2019 — Dec 2019", "Klinik Mustopa • Sep 2019 — Des 2019"],
+      ["Managed clinic administration and ensured patient registration, record keeping, and medication inventory processes ran smoothly to support medical services.", "Mengelola admin klinik dan memastikan proses pendaftaran pasien, pencatatan data, serta pengelolaan stok obat berjalan dengan baik untuk mendukung pelayanan medis."],
+      ["Clinic Administrator", "Administrator Klinik"],
+      ["Prepare test cases, test reports, UAT documents, and Go-Live / Production Acceptance documents.", "Menyusun test case, laporan pengujian, dokumen UAT, serta dokumen Go-Live / Production Acceptance."],
+      ["Perform functional testing to ensure system features meet business and technical requirements.", "Melakukan functional testing untuk memastikan fitur sistem memenuhi kebutuhan bisnis dan teknis."],
+      ["Develop AI-assisted test cases to improve testing efficiency and coverage.", "Mengembangkan test case berbantuan AI untuk meningkatkan efisiensi dan cakupan pengujian."],
+      ["Conduct regression testing to verify system changes do not impact existing functionality.", "Melakukan regression testing untuk memastikan perubahan sistem tidak memengaruhi fungsi yang sudah ada."],
+      ["Identify, document, and report software defects, including detailed reproduction steps and test evidence.", "Mengidentifikasi, mendokumentasikan, dan melaporkan defect perangkat lunak, termasuk langkah reproduksi dan bukti pengujian."],
+      ["Collaborate with developers, QA team members, and business stakeholders throughout the testing process.", "Berkolaborasi dengan developer, anggota tim QA, dan pemangku kepentingan bisnis selama proses pengujian."],
+      ["Execute test scenarios and monitor test results to ensure the application is ready for deployment to production.", "Menjalankan skenario pengujian dan memantau hasilnya untuk memastikan aplikasi siap dirilis ke production."],
+      ["Create test plan and test report for invoicing process (purchase order, billing statement, payment, invoice, and tax invoice).", "Membuat test plan dan laporan pengujian untuk proses invoicing (purchase order, billing statement, payment, invoice, dan tax invoice)."],
+      ["Create test plan and test report for Ekosistem process (Product, Variant).", "Membuat test plan dan laporan pengujian untuk proses Ekosistem (Product, Variant)."],
+      ["Collaborate with team members in testing manually and use Jira as management and bug reporting system.", "Berkolaborasi dengan anggota tim dalam pengujian manual serta menggunakan Jira sebagai sistem manajemen dan pelaporan bug."],
+      ["Create test script and run automation testing with Katalon or Cypress.", "Membuat test script dan menjalankan automation testing menggunakan Katalon atau Cypress."],
+      ["Create Load test script with JMeter.", "Membuat load test script dengan JMeter."],
+      ["Create documentation to comply with company standard Requirement Specification, Bispro/BPMN diagram, Functional, Integration and User Acceptance Testing.", "Membuat dokumentasi sesuai standar perusahaan, meliputi Requirement Specification, diagram Bispro/BPMN, Functional, Integration, dan User Acceptance Testing."],
+      ["Managed patient registration processes.", "Mengelola proses pendaftaran pasien."],
+      ["Performed data entry tasks, including maintaining detailed and up-to-date patient records using clinic management systems.", "Melakukan input data, termasuk menjaga catatan pasien tetap terperinci dan terkini menggunakan sistem manajemen klinik."],
+      ["Oversaw medication stock inventory, regularly monitoring supply levels, placing orders, and verifying deliveries to ensure availability of essential medicines.", "Mengelola inventaris stok obat, memantau persediaan secara berkala, melakukan pemesanan, dan memverifikasi pengiriman agar obat penting selalu tersedia."],
+      ["Made with ♥ by Mochamad Noer Faizi Supriatna Putra · 2025", "Dibuat dengan ♥ oleh Mochamad Noer Faizi Supriatna Putra · 2025"]
+    ];
+    const languageTranslations = {
+      id: new Map(languagePairs.map(([english, indonesian]) => [english, indonesian])),
+      en: new Map(languagePairs.map(([english, indonesian]) => [indonesian, english]))
+    };
+    const languageButtons = document.querySelectorAll("[data-language]");
+    let activeLanguage = localStorage.getItem("portfolio-language") || document.documentElement.lang || "id";
+    if (!languageTranslations[activeLanguage]) activeLanguage = "id";
+
+    function applyLanguage(language) {
+      const translations = languageTranslations[language];
+      const textWalker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+      let textNode;
+
+      while ((textNode = textWalker.nextNode())) {
+        if (textNode.parentElement.closest("script, style")) continue;
+        const originalText = textNode.nodeValue;
+        const normalizedText = originalText.replace(/\s+/g, " ").trim();
+        const translatedText = translations.get(normalizedText);
+        if (translatedText === undefined) continue;
+
+        const leadingWhitespace = originalText.match(/^\s*/)[0];
+        const trailingWhitespace = originalText.match(/\s*$/)[0];
+        textNode.nodeValue = `${leadingWhitespace}${translatedText}${trailingWhitespace}`;
+      }
+
+      activeLanguage = language;
+      document.documentElement.lang = language;
+      document.querySelector(".language-switch").setAttribute(
+        "aria-label",
+        language === "id" ? "Pilih bahasa" : "Choose language"
+      );
+      languageButtons.forEach(button => {
+        button.setAttribute("aria-pressed", String(button.dataset.language === language));
+      });
+      document.querySelector('meta[name="description"]').content = language === "id"
+        ? "Mochamad Noer Faizi Supriatna Putra — QA Engineer berpengalaman di Telkom Indonesia. Spesialis manual & automation testing."
+        : "Mochamad Noer Faizi Supriatna Putra — QA Engineer with experience at Telkom Indonesia, specializing in manual and automation testing.";
+      document.title = language === "id" ? "Faizi — QA Engineer" : "Faizi — QA Engineer";
+      localStorage.setItem("portfolio-language", language);
+    }
+
+    languageButtons.forEach(button => {
+      button.addEventListener("click", () => applyLanguage(button.dataset.language));
+    });
+
     // Hamburger menu
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('navLinks');
@@ -2578,10 +2971,12 @@
         timelineItems.forEach(el => el.classList.remove('active'));
         item.classList.add('active');
         renderExperience(item.dataset.job);
+        applyLanguage(activeLanguage);
       });
     });
 
     renderExperience('digistar');
+    applyLanguage(activeLanguage);
 
     // Navbar scroll effect (already styled, just light refinement)
     window.addEventListener('scroll', () => {
